@@ -64,3 +64,5 @@ D:\Github\APZ\EcoDuty\EcoDuty\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkC
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.MvcApplicationPartsAssemblyInfo.cache
 D:\Github\APZ\EcoDuty\EcoDuty\bin\Debug\netcoreapp3.0\DataLayer.dll
 D:\Github\APZ\EcoDuty\EcoDuty\bin\Debug\netcoreapp3.0\DataLayer.pdb
+D:\Github\APZ\EcoDuty\EcoDuty\bin\Debug\netcoreapp3.0\DAL.dll
+D:\Github\APZ\EcoDuty\EcoDuty\bin\Debug\netcoreapp3.0\DAL.pdb

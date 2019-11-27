@@ -1,6 +1,5 @@
 D:\Github\APZ\EcoDuty\DataLayer\bin\Debug\netcoreapp3.0\DataLayer.deps.json
 D:\Github\APZ\EcoDuty\DataLayer\bin\Debug\netcoreapp3.0\DataLayer.dll
-D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.0\DataLayer.csprojAssemblyReference.cache
 D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.0\DataLayer.AssemblyInfoInputs.cache
 D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.0\DataLayer.AssemblyInfo.cs
 D:\Github\APZ\EcoDuty\DataLayer\bin\Debug\netcoreapp3.0\DataLayer.runtimeconfig.json

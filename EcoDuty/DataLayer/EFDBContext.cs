@@ -16,6 +16,7 @@ namespace DataLayer
         public DbSet<SensorType> SensorTypes { get; set; }
         public DbSet<Technic> Technics { get; set; }
         public DbSet<TechnicType> TechnicTypes { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public EFDBContext(DbContextOptions<EFDBContext> options) : base(options) { }
     }
