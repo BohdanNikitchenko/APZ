@@ -10,6 +10,7 @@ namespace BusinessLayer.Models
         public string Surname { get; set; }
         public string Patronymic { get; set; }
         public string Passport { get; set; }
+        public string ConfirmPassword { get; set; }
         public string TaxIdentity { get; set; }
         public string City { get; set; }
         public string Address { get; set; }

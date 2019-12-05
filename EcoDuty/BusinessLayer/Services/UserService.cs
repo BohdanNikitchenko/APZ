@@ -22,7 +22,7 @@ namespace BusinessLayer.Services
             City city = dataManager.CitiesRepository.GetItemByName(u.City);
             user.Name = u.Name;
             user.Surname = u.Surname;
-            user.Password = u.Password;
+            user.Password = HashStaticService.HashPassword(u.Password);
             user.Patronymic = u.Patronymic;
             user.Passport = u.Passport;
             user.Surname = u.Surname;
@@ -56,7 +56,7 @@ namespace BusinessLayer.Services
         public User IsRegistrated(string passport, string password)
         {
             var obj = dataManager.UsersRepository.FindUserByPassport(passport);
-            if (obj.Password == password)
+            if (HashStaticService.VerifyHashedPassword(obj.Password, password))
             {
                 return obj;
             }

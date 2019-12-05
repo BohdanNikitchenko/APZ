@@ -37,7 +37,7 @@ namespace EcoDuty.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(RegisterUserModel model)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && model.Password == model.ConfirmPassword)
             {
                 bool t = servicesmanager.Users.RegistrateUser(model);
                 if (t)
@@ -47,6 +47,10 @@ namespace EcoDuty.Controllers
                 }
                 else
                     ModelState.AddModelError("", "Некорректные паспортные данные");
+            }
+            else
+            {
+                ModelState.AddModelError("Password", "Пароли не совпадают");
             }
             return View(model);
         }
@@ -93,6 +97,12 @@ namespace EcoDuty.Controllers
                 ModelState.AddModelError("", "Некорректные логин и(или) пароль");
             }
             return View(model);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Account");
         }
     }
 }
