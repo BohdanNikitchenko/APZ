@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Implementations
 {
-    class EFSensorsRepository : IRepository<Sensor>
+    public class EFSensorsRepository : ISensorsRepository
     {
         private EFDBContext context;
         public EFSensorsRepository(EFDBContext context)

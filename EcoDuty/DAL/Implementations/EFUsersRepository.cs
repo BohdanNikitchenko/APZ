@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Implementations
 {
-    class EFUsersRepository : IRepository<User>
+    public class EFUsersRepository : IUsersRepository
     {
         private EFDBContext context;
         public EFUsersRepository(EFDBContext context)
@@ -58,8 +58,20 @@ namespace DAL.Implementations
             context.SaveChanges();
         }
 
+        public User FindUserByPassport(string passport)
+        {
+            return context.Set<User>()
+                .Include(x => x.City)
+                .Include(x => x.Fines)
+                .Include(x => x.Sensors)
+                .Include(x => x.Technics)
+                .FirstOrDefault(x => x.Passport == passport);
+        }
 
-
+        //public User FindRegisteredUser(string passport, string password)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
 

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Implementations
 {
-    class EFFineTypesRepository : IRepository<FineType>
+    public class EFFineTypesRepository : IFineTypesRepository
     {
         private EFDBContext context;
         public EFFineTypesRepository(EFDBContext context)

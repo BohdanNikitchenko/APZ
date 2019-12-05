@@ -53,5 +53,10 @@ namespace DAL.Implementations
             }
             context.SaveChanges();
         }
+
+        public City GetItemByName(string city)
+        {
+            return context.Cities.FirstOrDefault(c => c.Name == city);
+        }
     }
 }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Implementations
 {
-    class EFTechnicTypesRepository : IRepository<TechnicType>
+    public class EFTechnicTypesRepository : ITechnicTypesRepository
     {
         private EFDBContext context;
         public EFTechnicTypesRepository(EFDBContext context)

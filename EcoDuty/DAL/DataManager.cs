@@ -31,13 +31,34 @@ namespace DAL
             this.usersRepository = usersRepository;
         }
 
-        public ICitiesRepository CitiesRepository { get; set; }
-        public IFinesRepository FinesRepository { get; set; }
-        public IFineTypesRepository FineTypesRepository { get; set; }
-        public ISensorsRepository SensorsRepository { get; set; }
-        public ISensorTypesRepository SensorTypesRepository { get; set; }
-        public ITechnicsRepository TechnicsRepository { get; set; }
-        public ITechnicTypesRepository TechnicTypesRepository { get; set; }
-        public IUsersRepository UsersRepository { get; set; }
+        public ICitiesRepository CitiesRepository { get{ return citiesRepository;} }
+        public IFinesRepository FinesRepository
+        {
+            get { return finesRepository; }
+        }
+        public IFineTypesRepository FineTypesRepository
+        {
+            get { return fineTypesRepository; }
+        }
+        public ISensorsRepository SensorsRepository
+        {
+            get { return sensorsRepository; }
+        }
+        public ISensorTypesRepository SensorTypesRepository
+        {
+            get { return sensorTypesRepository; }
+        }
+        public ITechnicsRepository TechnicsRepository
+        {
+            get { return technicsRepository; }
+        }
+        public ITechnicTypesRepository TechnicTypesRepository
+        {
+            get { return technicTypesRepository; }
+        }
+        public IUsersRepository UsersRepository
+        {
+            get { return usersRepository; }
+        }
     }
 }
