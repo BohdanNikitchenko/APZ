@@ -14,7 +14,7 @@ namespace BusinessLayer.Models
         public string TaxIdentity { get; set; }
         public string City { get; set; }
         public string Password { get; set; }
-
+        public string Email { get; set; }
         public IEnumerable<string> Cities { get; set; }
     }
 }

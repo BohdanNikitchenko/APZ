@@ -16,7 +16,7 @@ namespace BusinessLayer.Services
         {
             this.dataManager = dataManager;
         }
-        public bool RegistrateUser(RegisterUserModel u)
+        public User RegistrateUser(RegisterUserModel u)
         {
             User user = new User();
             City city = dataManager.CitiesRepository.GetItemByName(u.City);
@@ -29,15 +29,14 @@ namespace BusinessLayer.Services
             user.CityId = city.Id;
             user.TaxIdentity = u.TaxIdentity;
             user.City = city;
+            user.Email = u.Email;
             if (dataManager.UsersRepository.FindUserByPassport(user.Passport) == null)
             {
                 dataManager.UsersRepository.Create(user);
-                return true;
+                return user;
             }
-            else
-            {
-                return false;
-            }
+
+            return null;
 
         }
 

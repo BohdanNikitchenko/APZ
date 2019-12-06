@@ -1,0 +1,39 @@
+﻿@model PlaceTypeModel
+@{
+    ViewData["Title"] = "AddPlaceTypePage";
+}
+
+<h1>AddPlaceTypePage</h1>
+<form asp-action="AddPlaceTypePage" method="post" enctype="multipart/form-data">
+
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <label asp-for="HousingType" class="control-label name__input"></label>
+    <div class="valid">
+        <input asp-for="HousingType" class="form-control input__item" />
+        <span asp-validation-for="HousingType" class="text-danger exit__errore field-validation-error"></span>
+    </div>
+
+
+    <label asp-for="EcoType" class="control-label name__input"></label>
+    <div class="valid">
+        <input asp-for="EcoType" class="form-control  input__item" />
+        <span asp-validation-for="EcoType" class="text-danger exit__errore field-validation-error"></span>
+    </div>
+
+
+
+
+    <label asp-for="SizeFine" class="control-label name__input"></label>
+    <div class="valid">
+        <input asp-for="SizeFine" class="form-control  input__item" />
+        <span asp-validation-for="SizeFine" class="text-danger exit__errore field-validation-error"></span>
+    </div>
+
+
+    <input type="submit" id="SaveBtn"  value="SaveChange" class="nav__button" />
+
+</form>
+
+<a href='@Url.Action("ViewAllPlaceType","Admin")' class="back__list">Back to List</a>

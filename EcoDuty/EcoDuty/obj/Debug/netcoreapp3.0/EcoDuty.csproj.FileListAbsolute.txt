@@ -144,3 +144,7 @@ D:\Github\APZ\EcoDuty\EcoDuty\bin\Debug\netcoreapp3.0\BusinessLayer.pdb
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Account\Index.cshtml.g.cs
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Account\Account.cshtml.g.cs
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Account\Login.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Index.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\ViewAllPlaceType.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\PlaceTypePage.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\AddPlaceTypePage.cshtml.g.cs

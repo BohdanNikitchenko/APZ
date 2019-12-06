@@ -39,10 +39,10 @@ namespace EcoDuty.Controllers
         {
             if (ModelState.IsValid && model.Password == model.ConfirmPassword)
             {
-                bool t = servicesmanager.Users.RegistrateUser(model);
-                if (t)
+                User user = servicesmanager.Users.RegistrateUser(model);
+                if (user != null)
                 {
-                    await Authenticate(model.Passport); // аутентификация
+                    await Authenticate(user.Passport, user.Role); // аутентификация
                     return RedirectToAction("Account");
                 }
                 else
@@ -52,14 +52,17 @@ namespace EcoDuty.Controllers
             {
                 ModelState.AddModelError("Password", "Пароли не совпадают");
             }
-            return View(model);
+
+            return Index();
+            //return View(model);
         }
-        private async Task Authenticate(string userName)
+        private async Task Authenticate(string userName, string role)
         {
             // создаем один claim
             var claims = new List<Claim>
             {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+                new Claim(ClaimsIdentity.DefaultNameClaimType, userName),
+                new Claim(ClaimsIdentity.DefaultRoleClaimType, role)
             };
             // создаем объект ClaimsIdentity
             ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
@@ -90,7 +93,7 @@ namespace EcoDuty.Controllers
 
                 if (user != null)
                 {
-                    await Authenticate(model.Passport); // аутентификация
+                    await Authenticate(user.Passport, user.Role); // аутентификация
 
                     return RedirectToAction("Account", "Account");
                 }

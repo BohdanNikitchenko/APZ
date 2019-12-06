@@ -53,6 +53,8 @@ namespace EcoDuty
             services.AddTransient<ISensorTypesRepository, EFSensorTypesRepository>();
             services.AddTransient<ITechnicsRepository, EFTechnicsRepository>();
             services.AddTransient<ITechnicTypesRepository, EFTechnicTypesRepository>();
+            services.AddTransient<IPlaceRepository, EFPlacesRepository>();
+            services.AddTransient<IPlaceTypeRepository, EFPlaceTypeRepository>();
 
             services.AddScoped<DataManager>();
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
