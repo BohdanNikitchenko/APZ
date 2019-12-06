@@ -13,12 +13,11 @@ namespace DataLayer.Entities
         public string Passport { get; set; }
         public string TaxIdentity { get; set; }
         public int CityId { get; set; }
-        public string Address { get; set; }
-        public string HousingType { get; set; }
         public string Password { get; set; }
         public List<Fine> Fines { get; set; }
         public List<Technic> Technics { get; set; }
         public City City { get; set; }
         public List<Sensor> Sensors { get; set; }
+        public List<Place> Places { get; set; }
     }
 }

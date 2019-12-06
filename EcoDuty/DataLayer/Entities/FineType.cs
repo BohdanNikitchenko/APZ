@@ -8,7 +8,7 @@ namespace DataLayer.Entities
     {
         public int Id { get; set; }
         public string Type { get; set; }
-        public int SizeFine { get; set; }
+        public int SizeFine { get; set; } = 0;
         public List<Fine> Fines { get; set; }
     }
 }

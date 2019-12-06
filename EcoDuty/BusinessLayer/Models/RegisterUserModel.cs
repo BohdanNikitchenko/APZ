@@ -13,8 +13,6 @@ namespace BusinessLayer.Models
         public string ConfirmPassword { get; set; }
         public string TaxIdentity { get; set; }
         public string City { get; set; }
-        public string Address { get; set; }
-        public string HousingType { get; set; }
         public string Password { get; set; }
 
         public IEnumerable<string> Cities { get; set; }

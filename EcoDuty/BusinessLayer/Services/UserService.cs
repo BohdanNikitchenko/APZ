@@ -26,9 +26,7 @@ namespace BusinessLayer.Services
             user.Patronymic = u.Patronymic;
             user.Passport = u.Passport;
             user.Surname = u.Surname;
-            user.Address = u.Address;
             user.CityId = city.Id;
-            user.HousingType = u.HousingType;
             user.TaxIdentity = u.TaxIdentity;
             user.City = city;
             if (dataManager.UsersRepository.FindUserByPassport(user.Passport) == null)
