@@ -1,0 +1,19 @@
+﻿@model IEnumerable<SensorType>
+@{
+    ViewData["Title"] = "ViewAllSensorType";
+}
+
+<h1>ViewAllSensorType</h1>
+<br />
+<a href='@Url.Action("AddSensorTypePage","Admin")' class="link__dish">Add Sensor Type</a>
+<br />
+@foreach (var sensorType in Model)
+{
+    <div>
+        <a href='@Url.Action("SensorTypePage","Admin", new{id = sensorType.Id})' class="link__dish">@sensorType.Type</a>
+        <a href='@Url.Action("SensorTypeRemove","Admin",new{id = sensorType.Id})' class="link__dish">Delete</a>
+    </div>
+}
+
+
+<a href='@Url.Action("Index","Admin")' class="back__list">Back</a>

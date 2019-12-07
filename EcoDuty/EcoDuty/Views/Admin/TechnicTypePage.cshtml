@@ -1,0 +1,38 @@
+﻿@model TechnicTypeModel
+@{
+    ViewData["Title"] = "TechnicTypePage";
+}
+
+<div>
+    <br /><br /><br /><br />
+    <form asp-action="TechnicTypePage" method="post" enctype="multipart/form-data">
+
+        <input type="number" hidden asp-for="Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <label asp-for="Type" class="control-label name__input"></label>
+        <div class="valid">
+            <input asp-for="Type" class="form-control input__item" />
+            <span asp-validation-for="Type" class="text-danger exit__errore field-validation-error"></span>
+        </div>
+
+
+        <label asp-for="Classification" class="control-label name__input"></label>
+        <div class="valid">
+            <input asp-for="Classification" class="form-control  input__item" />
+            <span asp-validation-for="Classification" class="text-danger exit__errore field-validation-error"></span>
+        </div>
+
+        <label asp-for="SizeFine" class="control-label name__input"></label>
+        <div class="valid">
+            <input asp-for="SizeFine" class="form-control  input__item" />
+            <span asp-validation-for="SizeFine" class="text-danger exit__errore field-validation-error"></span>
+        </div>
+
+
+        <input type="submit" id="SaveBtn" value="SaveChange" class="nav__button" />
+
+    </form>
+
+    <a href='@Url.Action("ViewAllTechnicType", "Admin")' class="back__list">Back to List</a>
+</div>

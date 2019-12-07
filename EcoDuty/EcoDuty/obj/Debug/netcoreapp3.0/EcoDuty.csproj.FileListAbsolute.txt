@@ -148,3 +148,9 @@ D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Index.cs
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\ViewAllPlaceType.cshtml.g.cs
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\PlaceTypePage.cshtml.g.cs
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\AddPlaceTypePage.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\ViewAllTechnicType.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\TechnicTypePage.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\AddTechnicTypePage.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\ViewAllSensorType.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\AddSensorTypePage.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\SensorTypePage.cshtml.g.cs

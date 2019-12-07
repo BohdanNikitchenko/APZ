@@ -77,5 +77,104 @@ namespace EcoDuty.Controllers
             }
             return RedirectToAction("ViewAllPlaceType");
         }
+
+        [HttpGet]
+        public IActionResult ViewAllTechnicType()
+        {
+            IEnumerable<TechnicType> techicTypes = servicesmanager.Admin.GetAllTechnicTypes();
+            return View(techicTypes);
+        }
+
+
+        [HttpGet]
+        public IActionResult TechnicTypePage(int id)
+        {
+            TechnicTypeModel model = servicesmanager.Admin.GetTechnicTypeModelById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult TechnicTypePage(TechnicTypeModel model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                servicesmanager.Admin.CahngeTechnicType(model);
+            }
+
+            return TechnicTypePage(model.Id);
+        }
+
+        [HttpGet]
+        public IActionResult AddTechnicTypePage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddTechnicTypePage(TechnicTypeModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                servicesmanager.Admin.AddTechnicType(model);
+            }
+            return RedirectToAction("ViewAllTechnicType");
+        }
+
+        [HttpGet]
+        public IActionResult TechnicTypeRemove(int id)
+        {
+            servicesmanager.Admin.RemoveTechnicTypeById(id);
+            return RedirectToAction("ViewAllTechnicType");
+        }
+
+        [HttpGet]
+        public IActionResult ViewAllSensorType()
+        {
+            IEnumerable<SensorType> sensorTypes = servicesmanager.Admin.GetAllSensorTypes();
+            return View(sensorTypes);
+        }
+
+        [HttpGet]
+        public IActionResult AddSensorTypePage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddSensorTypePage(SensorTypeModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                servicesmanager.Admin.AddSensorType(model);
+            }
+            return RedirectToAction("ViewAllSensorType");
+        }
+
+        [HttpGet]
+        public IActionResult SensorTypePage(int id)
+        {
+            SensorTypeModel model = servicesmanager.Admin.GetSensorTypeModelById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult SensorTypePage(SensorTypeModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                servicesmanager.Admin.CahngeSensorType(model);
+            }
+
+            return SensorTypePage(model.Id);
+        }
+
+        public IActionResult SensorTypeRemove(int id)
+        {
+            servicesmanager.Admin.RemoveSensorTypeById(id);
+            return RedirectToAction("ViewAllSensorType");
+        }
     }
 }
