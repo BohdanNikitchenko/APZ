@@ -13,5 +13,15 @@
 <p>@Model.TaxIdentity</p>
 <p>@Model.City.Name</p>
 <p>@Model.Role</p>
-
-<a href="@Url.Action("Index","Admin")">Admin</a>
+<br />
+<br />
+@if (Model.Role == "admin")
+{
+    <a href="@Url.Action("Index","Admin")">Admin</a>
+}
+<br />
+<br />
+<a href='@Url.Action("ViewAllPlace","Account")' class="link__dish">Places</a>
+<br />
+<br />
+<a href='@Url.Action("ViewAllTechnic","Account")' class="link__dish">Technics</a>

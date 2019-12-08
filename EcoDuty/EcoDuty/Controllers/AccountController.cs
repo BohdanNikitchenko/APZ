@@ -107,5 +107,23 @@ namespace EcoDuty.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "Account");
         }
+
+
+        [HttpGet]
+        public IActionResult ViewAllPlace()
+        {
+            IEnumerable<Place> places = servicesmanager.Users.GetAllPlaces();
+            return View(places);
+        }
+
+
+        [HttpGet]
+        public IActionResult ViewAllTechnic()
+        {
+            IEnumerable<Technic> technics = servicesmanager.Users.GetAllTechnics();
+            return View(technics);
+        }
     }
+
+
 }

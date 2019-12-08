@@ -60,5 +60,15 @@ namespace BusinessLayer.Services
 
             return null;
         }
+
+        public IEnumerable<Place> GetAllPlaces()
+        {
+            return dataManager.PlacesRepository.GetList();
+        }
+
+        public IEnumerable<Technic> GetAllTechnics()
+        {
+            return dataManager.TechnicsRepository.GetList();
+        }
     }
 }

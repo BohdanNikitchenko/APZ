@@ -10,8 +10,8 @@
 @foreach (var placeType in Model)
 {
     <div>
-        <a href='@Url.Action("PlaceTypePage","Admin", new{id = @placeType.Id})' class="link__dish">@placeType.HousingType @placeType.EcoType</a>
-        <a href='@Url.Action("PlaceTypeRemove","Admin",new{id = @placeType.Id})' class="link__dish">Delete</a>
+        <a href='@Url.Action("PlaceTypePage","Admin", new{id = placeType.Id})' class="link__dish">@placeType.HousingType @placeType.EcoType</a>
+        <a href='@Url.Action("PlaceTypeRemove","Admin",new{id = placeType.Id})' class="link__dish">Delete</a>
     </div>
 }
 

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Technic>
+@{
+    ViewData["Title"] = "ViewAllTechnic";
+}
+
+<h1>ViewAllTechnic</h1>
+
+<br />
+<a href='@Url.Action("AddPTechnicPage","Aсcount")' class="link__dish">Add Place Type</a>
+<br />
+@foreach (var technic in Model)
+{
+    <div>
+        <a href='@Url.Action("TechnicPage","Account", new{id = technic.Id})' class="link__dish">@technic</a>
+        <a href='@Url.Action("TechnicRemove","Account",new{id = technic.Id})' class="link__dish">Delete</a>
+    </div>
+}
+
+<a href='@Url.Action("Account","Account")' class="back__list">Back</a>

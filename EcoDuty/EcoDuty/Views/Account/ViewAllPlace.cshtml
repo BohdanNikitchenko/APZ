@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Place>
+@{
+    ViewData["Title"] = "ViewAllPlace";
+}
+
+<h1>ViewAllPlace</h1>
+
+<br />
+<a href='@Url.Action("AddPlacePage","Aсcount")' class="link__dish">Add Place Type</a>
+<br />
+@foreach (var place in Model)
+{
+    <div>
+        <a href='@Url.Action("PlacePage","Account", new{id = place.Id})' class="link__dish">@place.Address</a>
+        <a href='@Url.Action("PlaceRemove","Account",new{id = place.Id})' class="link__dish">Delete</a>
+    </div>
+}
+
+<a href='@Url.Action("Account","Account")' class="back__list">Back</a>
