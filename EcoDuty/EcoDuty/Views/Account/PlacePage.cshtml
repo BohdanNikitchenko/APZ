@@ -1,0 +1,16 @@
+﻿@model Place
+@{
+    ViewData["Title"] = "PlacePage";
+}
+
+<h1>PlacePage</h1>
+<p>Адресс:</p>
+<p>@Model.Address</p>
+<p>Тип жилья:</p>
+<p>@Model.PlaceType.HousingType</p>
+<p>Вид отопления:</p>
+<p>@Model.PlaceType.EcoType</p>
+<p>Предусмотренный размер штрафа:</p>
+<p>@Model.PlaceType.SizeFine</p>
+<br />
+<a href='@Url.Action("ViewAllPlace","Account")' class="back__list">Back to List</a>

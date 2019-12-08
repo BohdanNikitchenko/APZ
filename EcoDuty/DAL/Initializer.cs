@@ -11,14 +11,6 @@ namespace DAL
     {
         public static void InitData(EFDBContext context)
         {
-
-            if (!context.FineTypes.Any())
-            {
-                context.FineTypes.Add(new FineType() { Type = "Sensor"});
-                context.FineTypes.Add(new FineType() { Type = "Place"});
-                context.FineTypes.Add(new FineType() { Type = "Technic"});
-                context.SaveChanges();
-            }
             if (!context.TechnicTypes.Any())
             {
                 context.TechnicTypes.Add(new TechnicType() { Type = "Auto", Classification = "Euro1", Fuel = "Petrol", SizeFine = 600});

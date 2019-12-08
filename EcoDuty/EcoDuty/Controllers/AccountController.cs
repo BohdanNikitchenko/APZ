@@ -123,6 +123,39 @@ namespace EcoDuty.Controllers
             IEnumerable<Technic> technics = servicesmanager.Users.GetAllTechnics();
             return View(technics);
         }
+
+        [HttpGet]
+        public IActionResult AddPlacePage()
+        {
+            AddPlaceModel model = new AddPlaceModel();
+            model.CityList = servicesmanager.Users.GetAllPlaceTypesSelect();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult AddPlacePage(AddPlaceModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                servicesmanager.Users.AddPlace(model, User.Identity.Name);
+            }
+            return RedirectToAction("ViewAllPlace");
+            //return ViewAllPlace();
+        }
+
+        [HttpGet]
+        public IActionResult PlacePage(int id)
+        {
+            Place model = servicesmanager.Users.GetPlaceById(id);
+            return View(model);
+        }
+
+
+        public IActionResult PlaceRemove(int id)
+        {
+            servicesmanager.Users.RemovePlaceById(id);
+            return RedirectToAction("ViewAllPlace");
+        }
     }
 
 

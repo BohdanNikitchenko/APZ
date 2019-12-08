@@ -19,7 +19,6 @@ namespace DAL.Implementations
         public IEnumerable<Fine> GetList()
         {
             return context.Set<Fine>()
-                .Include(x => x.FineType)
                 .Include(x=>x.User)
                 .AsNoTracking().ToList();
         }
@@ -27,7 +26,6 @@ namespace DAL.Implementations
         public Fine GetItem(int id)
         {
             return context.Set<Fine>()
-                .Include(x => x.FineType)
                 .Include(x => x.User)
                 .FirstOrDefault(x => x.Id == id);
         }

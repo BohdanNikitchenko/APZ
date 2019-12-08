@@ -9,7 +9,6 @@ namespace DAL
     {
         private ICitiesRepository citiesRepository;
         private IFinesRepository finesRepository;
-        private IFineTypesRepository fineTypesRepository;
         private ISensorsRepository sensorsRepository;
         private ISensorTypesRepository sensorTypesRepository;
         private ITechnicsRepository technicsRepository;
@@ -19,14 +18,13 @@ namespace DAL
         private IPlaceTypeRepository placeTypesRepository;
 
         public DataManager(ICitiesRepository citiesRepository, IFinesRepository finesRepository,
-            IFineTypesRepository fineTypesRepository, ISensorsRepository sensorsRepository,
+            ISensorsRepository sensorsRepository,
             ISensorTypesRepository sensorTypesRepository, ITechnicsRepository technicsRepository,
             ITechnicTypesRepository technicTypesRepository, IUsersRepository usersRepository,
             IPlaceRepository placesRepository, IPlaceTypeRepository placeTypesRepository)
         {
             this.citiesRepository = citiesRepository;
             this.finesRepository = finesRepository;
-            this.fineTypesRepository = fineTypesRepository;
             this.sensorsRepository = sensorsRepository;
             this.sensorTypesRepository = sensorTypesRepository;
             this.technicsRepository = technicsRepository;
@@ -40,10 +38,6 @@ namespace DAL
         public IFinesRepository FinesRepository
         {
             get { return finesRepository; }
-        }
-        public IFineTypesRepository FineTypesRepository
-        {
-            get { return fineTypesRepository; }
         }
         public ISensorsRepository SensorsRepository
         {

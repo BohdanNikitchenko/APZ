@@ -1,0 +1,32 @@
+﻿@model AddPlaceModel
+@{
+    ViewData["Title"] = "AddPlacePage";
+}
+
+<h1>AddPlacePage</h1>
+
+<form asp-action="AddPlacePage" method="post" enctype="multipart/form-data">
+
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <label asp-for="Address" class="control-label name__input"></label>
+    <div class="valid">
+        <input asp-for="Address" class="form-control input__item" />
+        <span asp-validation-for="Address" class="text-danger exit__errore field-validation-error"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="PlaceTypeId" class="control-label name__input">Категория: </label>
+        <div class="valid">
+            <select asp-for="PlaceTypeId" class="form-control input__item" asp-items="@Model.CityList"></select>
+        </div>
+    </div>
+
+
+    <input type="submit" id="SaveBtn" value="SaveChange" class="nav__button" />
+
+</form>
+
+<a href='@Url.Action("ViewAllPlace","Account")' class="back__list">Back to List</a>

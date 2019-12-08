@@ -53,5 +53,13 @@ namespace DAL.Implementations
             }
             context.SaveChanges();
         }
+
+        public Place FindPlaceByUser_Address(int id, string address)
+        {
+            return context.Set<Place>()
+            .Include(x => x.PlaceType)
+            .Include(x => x.User)
+            .FirstOrDefault(x => x.UserId == id && x.Address == address);
+        }
     }
 }

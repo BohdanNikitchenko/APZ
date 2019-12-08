@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BusinessLayer.Models;
 using DAL;
 using DataLayer.Entities;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BusinessLayer.Services
 {
@@ -69,6 +70,50 @@ namespace BusinessLayer.Services
         public IEnumerable<Technic> GetAllTechnics()
         {
             return dataManager.TechnicsRepository.GetList();
+        }
+
+       
+
+        public List<SelectListItem> GetAllPlaceTypesSelect()
+        {
+            return dataManager.PlaceTypesRepository.GetList()
+                .Select(c => new SelectListItem() { Text = c.HousingType + " : " + c.EcoType, Value = c.Id.ToString() })
+                .ToList();
+        }
+
+        public void AddPlace(AddPlaceModel model, string name)
+        {
+            Place place = new Place();
+            Fine fine = new Fine();
+            User user = FindUserByPassport(name);
+            PlaceType placeType = dataManager.PlaceTypesRepository.GetItem(Convert.ToInt32(model.PlaceTypeId));
+            if(user != null && placeType != null && dataManager.PlacesRepository.FindPlaceByUser_Address(user.Id, model.Address) == null)
+            {
+                place.User = user;
+                place.UserId = user.Id;
+                place.PlaceTypeId = placeType.Id;
+                place.PlaceType = placeType;
+                place.Address = model.Address;
+                dataManager.PlacesRepository.Create(place);
+                place = dataManager.PlacesRepository.FindPlaceByUser_Address(user.Id, model.Address);
+                fine.Place = place;
+                fine.PlaceId = place.Id;
+                fine.User = place.User;
+                fine.UserId = place.UserId;
+                fine.Description = "Экологические нормы дома";
+                fine.SizeFine = place.PlaceType.SizeFine;
+                dataManager.FinesRepository.Create(fine);
+            }
+        }
+
+        public Place GetPlaceById(int id)
+        {
+            return dataManager.PlacesRepository.GetItem(id);
+        }
+
+        public void RemovePlaceById(int id)
+        {
+            dataManager.PlacesRepository.Delete(id);
         }
     }
 }

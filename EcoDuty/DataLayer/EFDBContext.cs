@@ -11,7 +11,6 @@ namespace DataLayer
     {
         public DbSet<City> Cities { get; set; }
         public DbSet<Fine> Fines { get; set; }
-        public DbSet<FineType> FineTypes { get; set; }
         public DbSet<Sensor> Sensors { get; set; }
         public DbSet<SensorType> SensorTypes { get; set; }
         public DbSet<Technic> Technics { get; set; }

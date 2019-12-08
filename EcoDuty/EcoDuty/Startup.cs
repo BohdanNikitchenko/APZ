@@ -49,7 +49,6 @@ namespace EcoDuty
             services.AddTransient<ISensorsRepository, EFSensorsRepository>();
             services.AddTransient<ICitiesRepository, EFCitiesRepository>();
             services.AddTransient<IFinesRepository, EFFinesRepository>();
-            services.AddTransient<IFineTypesRepository, EFFineTypesRepository>();
             services.AddTransient<ISensorTypesRepository, EFSensorTypesRepository>();
             services.AddTransient<ITechnicsRepository, EFTechnicsRepository>();
             services.AddTransient<ITechnicTypesRepository, EFTechnicTypesRepository>();

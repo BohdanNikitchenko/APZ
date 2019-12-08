@@ -46,6 +46,11 @@ namespace DAL.Implementations
                 .AsNoTracking().ToList();
         }
 
+        public object GetSelectList()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(PlaceType item)
         {
             context.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
