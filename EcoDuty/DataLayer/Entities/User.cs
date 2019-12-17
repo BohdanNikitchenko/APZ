@@ -16,7 +16,6 @@ namespace DataLayer.Entities
         public string Password { get; set; }
         public string Email { get; set; }
         public string Role { get; set; } = "user";
-        public List<Fine> Fines { get; set; }
         public List<Technic> Technics { get; set; }
         public City City { get; set; }
         public List<Sensor> Sensors { get; set; }

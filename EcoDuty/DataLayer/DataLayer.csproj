@@ -5,6 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20191216235832_SizeFineChanges.cs" />
+    <Compile Remove="Migrations\20191216235832_SizeFineChanges.Designer.cs" />
+    <Compile Remove="Migrations\20191217000314_SizeFineChanges1.cs" />
+    <Compile Remove="Migrations\20191217000314_SizeFineChanges1.Designer.cs" />
+    <Compile Remove="Migrations\20191217000931_SizeFineChanges2.cs" />
+    <Compile Remove="Migrations\20191217000931_SizeFineChanges2.Designer.cs" />
+    <Compile Remove="Migrations\20191217001136_SizeFineChanges3.cs" />
+    <Compile Remove="Migrations\20191217001136_SizeFineChanges3.Designer.cs" />
+    <Compile Remove="Migrations\20191217001430_SizeFineChanges4.cs" />
+    <Compile Remove="Migrations\20191217001430_SizeFineChanges4.Designer.cs" />
+    <Compile Remove="Migrations\20191217001705_SizeFineChanges5.cs" />
+    <Compile Remove="Migrations\20191217001705_SizeFineChanges5.Designer.cs" />
+    <Compile Remove="Migrations\20191217002009_Init.cs" />
+    <Compile Remove="Migrations\20191217002009_Init.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.1">

@@ -16,5 +16,6 @@ namespace DataLayer.Entities
         public bool? CurrentBool { get; set; }
         public int CounterFines { get; set; } = 0;
         public bool Flag { get; set; } = false;
+        public List<Fine> Fines { get; set; }
     }
 }

@@ -1,0 +1,23 @@
+﻿@model Technic
+@{
+    ViewData["Title"] = "TechnicPage";
+}
+
+<h1>TechnicPage</h1>
+
+<p>Номер транспорта:</p>
+<p>@Model.AutoNumber</p>
+<p>Год выпуска:</p>
+<p>@Model.YearOfCarManufacture</p>
+<p>Обьем двигателя(см³):</p>
+<p>@Model.EngineVolume</p>
+<p>Тип транспорта:</p>
+<p>@Model.TechnicType.Type</p>
+<p>Экологический стандарт:</p>
+<p>@Model.TechnicType.Classification</p>
+<p>Вид топлива:</p>
+<p>@Model.TechnicType.Fuel</p>
+<p>Предусмотренный размер штрафных баллов:</p>
+<p>@Model.SizeFine</p>
+<br />
+<a href='@Url.Action("ViewAllTechnic","Account")' class="back__list">Back to List</a>

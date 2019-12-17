@@ -74,8 +74,9 @@ namespace EcoDuty.Controllers
         [Authorize]
         public IActionResult Account()
         {
-            User u = servicesmanager.Users.FindUserByPassport(User.Identity.Name);
-            return View(u);
+            //User u = servicesmanager.Users.FindUserByPassport(User.Identity.Name);
+            UserModel model = servicesmanager.Users.FindUserModelByPassport(User.Identity.Name);
+            return View(model);
         }
 
         [HttpGet]
@@ -155,6 +156,40 @@ namespace EcoDuty.Controllers
         {
             servicesmanager.Users.RemovePlaceById(id);
             return RedirectToAction("ViewAllPlace");
+        }
+
+
+        [HttpGet]
+        public IActionResult AddTechnicPage()
+        {
+            AddTechnicModel model = new AddTechnicModel();
+            model.TechnicTypeList = servicesmanager.Users.GetAllTechnicTypesSelect();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult AddTechnicPage(AddTechnicModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                servicesmanager.Users.AddTechnic(model, User.Identity.Name);
+            }
+            return RedirectToAction("ViewAllTechnic");
+            //return ViewAllPlace();
+        }
+
+        [HttpGet]
+        public IActionResult TechnicPage(int id)
+        {
+            Technic model = servicesmanager.Users.GetTechnicById(id);
+            return View(model);
+        }
+
+
+        public IActionResult TechnicRemove(int id)
+        {
+            servicesmanager.Users.RemoveTechnicById(id);
+            return RedirectToAction("ViewAllTechnic");
         }
     }
 

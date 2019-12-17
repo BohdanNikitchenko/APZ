@@ -7,5 +7,6 @@ namespace DAL.Interfaces
 {
     public interface IFinesRepository : IRepository<Fine>
     {
+        int GetSumFinesById(int id);
     }
 }

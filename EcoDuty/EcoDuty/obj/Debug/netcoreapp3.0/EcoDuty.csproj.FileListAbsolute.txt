@@ -163,3 +163,5 @@ D:\Github\APZ\EcoDuty\EcoDuty\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.MvcApplicationPartsAssemblyInfo.cs
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Account\AddPlacePage.cshtml.g.cs
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Account\PlacePage.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Account\AddTechnicPage.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Account\TechnicPage.cshtml.g.cs

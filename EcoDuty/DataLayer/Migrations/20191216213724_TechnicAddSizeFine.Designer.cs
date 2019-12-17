@@ -4,14 +4,16 @@ using DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(EFDBContext))]
-    partial class EFDBContextModelSnapshot : ModelSnapshot
+    [Migration("20191216213724_TechnicAddSizeFine")]
+    partial class TechnicAddSizeFine
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +49,7 @@ namespace DataLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("SensorId")
+                    b.Property<int?>("SensorId")
                         .HasColumnType("int");
 
                     b.Property<int>("SizeFine")
@@ -71,9 +73,6 @@ namespace DataLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PlaceTypeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SizeFine")
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
@@ -279,9 +278,7 @@ namespace DataLayer.Migrations
                 {
                     b.HasOne("DataLayer.Entities.Sensor", "Sensor")
                         .WithMany("Fines")
-                        .HasForeignKey("SensorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SensorId");
                 });
 
             modelBuilder.Entity("DataLayer.Entities.Place", b =>

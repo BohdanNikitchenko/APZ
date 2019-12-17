@@ -43,6 +43,15 @@ namespace DAL
                 context.PlaceTypes.Add(new PlaceType() { HousingType = "House", EcoType = "Аirewood", SizeFine = 500 });
                 context.SaveChanges();
             }
+
+            if (!context.Cities.Any())
+            {
+                context.Cities.Add(new City() { Country = "Ukraine", Name = "Kharkiv"});
+                context.Cities.Add(new City() { Country = "Ukraine", Name = "Kiev" });
+                context.Cities.Add(new City() { Country = "Ukraine", Name = "Odessa" });
+                context.Cities.Add(new City() { Country = "Ukraine", Name = "Lviv" });
+                context.SaveChanges();
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model User
+﻿@model UserModel
 @{
     ViewData["Title"] = "Account";
 }
@@ -8,11 +8,11 @@
 <p>@Model.Surname</p>
 <p>@Model.Patronymic</p>
 <p>@Model.Email</p>
-<p>@Model.Password</p>
 <p>@Model.Passport</p>
 <p>@Model.TaxIdentity</p>
 <p>@Model.City.Name</p>
 <p>@Model.Role</p>
+<p>Общая сумма штрафных баллов : @Model.SumSizeFine</p>
 <br />
 <br />
 @if (Model.Role == "admin")

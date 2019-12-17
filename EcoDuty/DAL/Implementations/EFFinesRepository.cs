@@ -19,14 +19,14 @@ namespace DAL.Implementations
         public IEnumerable<Fine> GetList()
         {
             return context.Set<Fine>()
-                .Include(x=>x.User)
+                .Include(x=>x.Sensor)
                 .AsNoTracking().ToList();
         }
 
         public Fine GetItem(int id)
         {
             return context.Set<Fine>()
-                .Include(x => x.User)
+                .Include(x => x.Sensor)
                 .FirstOrDefault(x => x.Id == id);
         }
 
@@ -50,6 +50,11 @@ namespace DAL.Implementations
                 context.Fines.Remove(fine);
             }
             context.SaveChanges();
+        }
+
+        public int GetSumFinesById(int id)
+        {
+            return context.Fines.Where(x => x.SensorId == id).Sum(x => x.SizeFine);
         }
     }
 }

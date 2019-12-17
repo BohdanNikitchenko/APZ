@@ -20,9 +20,9 @@ namespace DAL.Implementations
         {
             return context.Set<User>()
                 .Include(x => x.City)
-                .Include(x => x.Fines)
                 .Include(x => x.Sensors)
                 .Include(x => x.Technics)
+                .Include(x => x.Places)
                 .AsNoTracking().ToList();
         }
 
@@ -30,9 +30,9 @@ namespace DAL.Implementations
         {
             return context.Set<User>()
                 .Include(x => x.City)
-                .Include(x => x.Fines)
                 .Include(x => x.Sensors)
                 .Include(x => x.Technics)
+                .Include(x => x.Places)
                 .FirstOrDefault(x => x.Id == id);
         }
 
@@ -62,9 +62,9 @@ namespace DAL.Implementations
         {
             return context.Set<User>()
                 .Include(x => x.City)
-                .Include(x => x.Fines)
                 .Include(x => x.Sensors)
                 .Include(x => x.Technics)
+                .Include(x => x.Places)
                 .FirstOrDefault(x => x.Passport == passport);
         }
 
