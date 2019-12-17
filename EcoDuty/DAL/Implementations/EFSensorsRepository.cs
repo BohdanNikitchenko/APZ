@@ -61,5 +61,14 @@ namespace DAL.Implementations
             return context.Set<Sensor>()
             .FirstOrDefault(x => x.UserId == id && x.SerialNumber == serialNumber);
         }
+
+        public Sensor GetSensorBySerialNumber(string serialNumber)
+        {
+            return context.Set<Sensor>()
+                .Include(x => x.User)
+                .Include(x => x.SensorType)
+                .Include(x => x.Fines)
+                .FirstOrDefault(x => x.SerialNumber == serialNumber);
+        }
     }
 }
