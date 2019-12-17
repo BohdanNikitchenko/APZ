@@ -7,5 +7,6 @@ namespace DAL.Interfaces
 {
     public interface ITechnicsRepository : IRepository<Technic>
     {
+        object FindTechnicByUser_AutoNumber(int id, string autoNumber);
     }
 }

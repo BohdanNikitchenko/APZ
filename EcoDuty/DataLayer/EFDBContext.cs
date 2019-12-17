@@ -19,6 +19,21 @@ namespace DataLayer
         public DbSet<Place> Places { get; set; }
         public DbSet<PlaceType> PlaceTypes { get; set; }
         public EFDBContext(DbContextOptions<EFDBContext> options) : base(options) { }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<User>()
+                .HasIndex(u => u.Passport)
+                .IsUnique();
+            builder.Entity<Sensor>()
+                .HasIndex(u => u.SerialNumber)
+                .IsUnique();
+            builder.Entity<Technic>()
+                .HasIndex(u => u.AutoNumber)
+                .IsUnique();
+            builder.Entity<Place>()
+               .HasIndex(u => u.Address)
+               .IsUnique();
+        }
     }
 
     public class EFDBContextFactory : IDesignTimeDbContextFactory<EFDBContext>
@@ -31,4 +46,6 @@ namespace DataLayer
             return new EFDBContext(optionsBuilder.Options);
         }
     }
+
+    
 }

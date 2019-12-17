@@ -21,6 +21,7 @@ namespace DAL.Implementations
             return context.Set<Sensor>()
                 .Include(x => x.User)
                 .Include(x=>x.SensorType)
+                .Include(x => x.Fines)
                 .AsNoTracking().ToList();
         }
 
@@ -29,6 +30,7 @@ namespace DAL.Implementations
             return context.Set<Sensor>()
                 .Include(x => x.User)
                 .Include(x => x.SensorType)
+                .Include(x => x.Fines)
                 .FirstOrDefault(x => x.Id == id);
         }
 
@@ -52,6 +54,12 @@ namespace DAL.Implementations
                 context.Sensors.Remove(sensor);
             }
             context.SaveChanges();
+        }
+
+        public object FindSensorByUser_SerialNumber(int id, string serialNumber)
+        {
+            return context.Set<Sensor>()
+            .FirstOrDefault(x => x.UserId == id && x.SerialNumber == serialNumber);
         }
     }
 }

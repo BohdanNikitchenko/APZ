@@ -19,6 +19,10 @@ namespace BusinessLayer.Services
         }
         public User RegistrateUser(RegisterUserModel u)
         {
+            if (dataManager.UsersRepository.FindUserByPassport(u.Passport) != null)
+            {
+                return null;
+            }
             User user = new User();
             City city = dataManager.CitiesRepository.GetItemByName(u.City);
             user.Name = u.Name;
@@ -31,14 +35,8 @@ namespace BusinessLayer.Services
             user.TaxIdentity = u.TaxIdentity;
             user.City = city;
             user.Email = u.Email;
-            if (dataManager.UsersRepository.FindUserByPassport(user.Passport) == null)
-            {
-                dataManager.UsersRepository.Create(user);
-                return user;
-            }
-
-            return null;
-
+            dataManager.UsersRepository.Create(user);
+            return user;
         }
 
         public IEnumerable<string> GetNumerableCitiesName()
@@ -120,7 +118,10 @@ namespace BusinessLayer.Services
 
         public void RemovePlaceById(int id)
         {
-            dataManager.PlacesRepository.Delete(id);
+            Place place = GetPlaceById(id);
+            place.Address = null;
+            dataManager.PlacesRepository.Update(place);
+            //dataManager.PlacesRepository.Delete(id);
         }
 
         public List<SelectListItem> GetAllTechnicTypesSelect()
@@ -130,12 +131,17 @@ namespace BusinessLayer.Services
                     Value = c.Id.ToString() }).ToList();
         }
 
+        public IEnumerable<Sensor> GetAllSensors()
+        {
+            return dataManager.SensorsRepository.GetList();
+        }
+
         public void AddTechnic(AddTechnicModel model, string name)
         {
             Technic technic = new Technic();
             User user = FindUserByPassport(name);
             TechnicType technicType = dataManager.TechnicTypesRepository.GetItem(Convert.ToInt32(model.TechnicTypeId));
-            if (user != null && technicType != null && dataManager.PlacesRepository.FindPlaceByUser_Address(user.Id, model.AutoNumber) == null)
+            if (user != null && technicType != null && dataManager.TechnicsRepository.FindTechnicByUser_AutoNumber(user.Id, model.AutoNumber) == null)
             {
                 technic.User = user;
                 technic.UserId = user.Id;
@@ -172,7 +178,49 @@ namespace BusinessLayer.Services
 
         public void RemoveTechnicById(int id)
         {
-            dataManager.TechnicsRepository.Delete(id);
+            Technic technic = GetTechnicById(id);
+            technic.AutoNumber = null;
+            dataManager.TechnicsRepository.Update(technic);
+            //dataManager.TechnicsRepository.Delete(id);
+        }
+
+        public List<SelectListItem> GetAllSensorTypesSelect()
+        {
+            return dataManager.SensorTypesRepository.GetList()
+                .Select(c => new SelectListItem()
+                {
+                    Text = c.Type,
+                    Value = c.Id.ToString()
+                }).ToList();
+        }
+
+        public void AddSensor(AddSensorModel model, string name)
+        {
+            Sensor sensor = new Sensor();
+            User user = FindUserByPassport(name);
+            SensorType sensorType = dataManager.SensorTypesRepository.GetItem(Convert.ToInt32(model.SensorTypeId));
+            if (user != null && sensorType != null && dataManager.SensorsRepository.FindSensorByUser_SerialNumber(user.Id, model.SerialNumber) == null)
+            {
+                sensor.User = user;
+                sensor.UserId = user.Id;
+                sensor.SensorTypeId = sensorType.Id;
+                sensor.SensorType = sensorType;
+                sensor.SerialNumber = model.SerialNumber;
+                dataManager.SensorsRepository.Create(sensor);
+                //place = dataManager.PlacesRepository.FindPlaceByUser_Address(user.Id, model.Address);
+            }
+        }
+
+        public void RemoveSensorById(int id)
+        {
+            Sensor sensor = GetSensorById(id);
+            sensor.SerialNumber = null;
+            dataManager.SensorsRepository.Update(sensor);
+        }
+
+        public Sensor GetSensorById(int id)
+        {
+            return dataManager.SensorsRepository.GetItem(id);
         }
     }
 }

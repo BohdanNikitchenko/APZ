@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Sensor>
+@{
+    ViewData["Title"] = "ViewAllSensor";
+}
+
+<h1>ViewAllSensor</h1>
+
+<br />
+<a href='@Url.Action("AddSensorPage","Account")' class="link__dish">Add Sensor</a>
+<br />
+@foreach (var sensor in Model)
+{
+    if (sensor.SerialNumber != null)
+    {
+        <div>
+            <a href='@Url.Action("SensorPage","Account", new{id = sensor.Id})' class="link__dish">@sensor.SerialNumber</a>
+            <a href='@Url.Action("SensorRemove","Account",new{id = sensor.Id})' class="link__dish">Delete</a>
+        </div>
+    }
+}
+
+<a href='@Url.Action("Account","Account")' class="back__list">Back</a>

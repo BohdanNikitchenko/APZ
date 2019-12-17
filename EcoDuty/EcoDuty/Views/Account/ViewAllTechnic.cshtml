@@ -10,10 +10,13 @@
 <br />
 @foreach (var technic in Model)
 {
-    <div>
-        <a href='@Url.Action("TechnicPage","Account", new{id = technic.Id})' class="link__dish">@technic.AutoNumber</a>
-        <a href='@Url.Action("TechnicRemove","Account",new{id = technic.Id})' class="link__dish">Delete</a>
-    </div>
+    if (technic.AutoNumber != null)
+    {
+        <div>
+            <a href='@Url.Action("TechnicPage","Account", new{id = technic.Id})' class="link__dish">@technic.AutoNumber</a>
+            <a href='@Url.Action("TechnicRemove","Account",new{id = technic.Id})' class="link__dish">Delete</a>
+        </div>
+    }
 }
 
 <a href='@Url.Action("Account","Account")' class="back__list">Back</a>

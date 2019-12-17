@@ -1,0 +1,50 @@
+﻿@model Sensor
+@{
+    ViewData["Title"] = "SensorPage";
+}
+
+<h1>SensorPage</h1>
+<p>Серийный номер:</p>
+<p>@Model.SerialNumber</p>
+<p>Тип сенсора:</p>
+<p>@Model.SensorType.Type</p>
+@switch (@Model.SensorType.ResType)
+{
+    case "Int":
+        <p>Экологический стандарт:</p>
+        <p>@Model.SensorType.NormalInt</p>
+        <p>Текущий показатель:</p>
+        <p>@Model.CurrentInt</p>
+        break;
+    case "Bool":
+        <p>Экологический стандарт:</p>
+        <p>@Model.SensorType.NormalBool</p>
+        <p>Текущий показатель:</p>
+        <p>@Model.CurrentBool</p>
+        break;
+    case "String":
+        <p>Экологический стандарт:</p>
+        <p>@Model.SensorType.NormalString</p>
+        <p>Текущий показатель:</p>
+        <p>@Model.CurrentString</p>
+        break;
+}
+<p>Предусмотренный размер штрафных баллов:</p>
+<p>@Model.SensorType.SizeFine</p>
+<br />
+<p>Fines:</p>
+<br />
+@foreach (var fine in Model.Fines)
+{
+    <div>
+        <p>Описание:</p>
+        <p>@fine.Description</p>
+        <p>Дата:</p>
+        <p>@fine.DateTime</p>
+        <p>Размер штрафных баллов:</p>
+        <p>@fine.SizeFine</p>
+    </div>
+}
+
+<br />
+<a href='@Url.Action("ViewAllSensor","Account")' class="back__list">Back to List</a>

@@ -126,6 +126,13 @@ namespace EcoDuty.Controllers
         }
 
         [HttpGet]
+        public IActionResult ViewAllSensor()
+        {
+            IEnumerable<Sensor> sensors = servicesmanager.Users.GetAllSensors();
+            return View(sensors);
+        }
+
+        [HttpGet]
         public IActionResult AddPlacePage()
         {
             AddPlaceModel model = new AddPlaceModel();
@@ -190,6 +197,39 @@ namespace EcoDuty.Controllers
         {
             servicesmanager.Users.RemoveTechnicById(id);
             return RedirectToAction("ViewAllTechnic");
+        }
+
+        [HttpGet]
+        public IActionResult AddSensorPage()
+        {
+            AddSensorModel model = new AddSensorModel();
+            model.SensorTypeList = servicesmanager.Users.GetAllSensorTypesSelect();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult AddSensorPage(AddSensorModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                servicesmanager.Users.AddSensor(model, User.Identity.Name);
+            }
+            return RedirectToAction("ViewAllSensor");
+            //return ViewAllPlace();
+        }
+
+        [HttpGet]
+        public IActionResult SensorPage(int id)
+        {
+            Sensor model = servicesmanager.Users.GetSensorById(id);
+            return View(model);
+        }
+
+
+        public IActionResult SensorRemove(int id)
+        {
+            servicesmanager.Users.RemoveSensorById(id);
+            return RedirectToAction("ViewAllSensor");
         }
     }
 

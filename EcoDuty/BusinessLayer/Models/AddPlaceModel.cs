@@ -8,7 +8,6 @@ namespace BusinessLayer.Models
 {
     public class AddPlaceModel
     {
-        //public int Id { get; set; }
         public string Address { get; set; }
         public string PlaceTypeId { get; set; }
         public List<SelectListItem> CityList { get; set; }

@@ -1,0 +1,31 @@
+﻿@model AddSensorModel
+@{
+    ViewData["Title"] = "AddSensorPage";
+}
+
+<h1>AddSensorPage</h1>
+
+<form asp-action="AddSensorPage" method="post" enctype="multipart/form-data">
+
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <label asp-for="SerialNumber" class="control-label name__input"></label>
+    <div class="valid">
+        <input asp-for="SerialNumber" class="form-control input__item" />
+        <span asp-validation-for="SerialNumber" class="text-danger exit__errore field-validation-error"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SensorTypeId" class="control-label name__input">Категория: </label>
+        <div class="valid">
+            <select asp-for="SensorTypeId" class="form-control input__item" asp-items="@Model.SensorTypeList"></select>
+        </div>
+    </div>
+
+
+    <input type="submit" id="SaveBtn" value="SaveChange" class="nav__button" />
+
+</form>
+
+<a href='@Url.Action("ViewAllSensor","Account")' class="back__list">Back to List</a>
