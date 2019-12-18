@@ -1,0 +1,38 @@
+﻿@model CityModel
+@{
+    ViewData["Title"] = "CityPage";
+}
+
+<h1>CityPage</h1>
+<div>
+    <br /><br /><br /><br />
+    <form asp-action="CityPage" method="post" enctype="multipart/form-data">
+
+        <input type="number" hidden asp-for="Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <label asp-for="Name" class="control-label name__input"></label>
+        <div class="valid">
+            <input asp-for="Name" class="form-control  input__item" />
+            <span asp-validation-for="Name" class="text-danger exit__errore field-validation-error"></span>
+        </div>
+
+        <label asp-for="Country" class="control-label name__input"></label>
+        <div class="valid">
+            <input asp-for="Country" class="form-control input__item" />
+            <span asp-validation-for="Country" class="text-danger exit__errore field-validation-error"></span>
+        </div>
+
+        <label asp-for="Status" class="control-label name__input"></label>
+        <div class="valid">
+            <input asp-for="Status" class="form-control  input__item" />
+            <span asp-validation-for="Status" class="text-danger exit__errore field-validation-error"></span>
+        </div>
+
+
+        <input type="submit" id="SaveBtn" value="SaveChange" class="nav__button" />
+
+    </form>
+
+    <a href='@Url.Action("ViewAllCities", "Admin")' class="back__list">Back to List</a>
+</div>

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<City>
+@{
+    ViewData["Title"] = "ViewAllCities";
+}
+
+<h1>ViewAllCities</h1>
+<br />
+<a href='@Url.Action("AddCityPage","Admin")' class="link__dish">Add City</a>
+<br />
+@foreach (var city in Model)
+{
+    <div>
+        <a href='@Url.Action("CityPage","Admin", new{id = city.Id})' class="link__dish">@city.Name</a>
+        <a href='@Url.Action("CityRemove","Admin",new{id = city.Id})' class="link__dish">Delete</a>
+    </div>
+}
+
+<a href='@Url.Action("Index","Admin")' class="back__list">Back</a>

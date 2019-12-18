@@ -136,6 +136,14 @@ namespace EcoDuty.Controllers
             return View(sensorTypes);
         }
 
+
+        [HttpGet]
+        public IActionResult ViewAllCities()
+        {
+            IEnumerable<City> cities = servicesmanager.Admin.GetAllCities();
+            return View(cities);
+        }
+
         [HttpGet]
         public IActionResult AddSensorTypePage()
         {
@@ -174,6 +182,48 @@ namespace EcoDuty.Controllers
         public IActionResult SensorTypeRemove(int id)
         {
             servicesmanager.Admin.RemoveSensorTypeById(id);
+            return RedirectToAction("ViewAllSensorType");
+        }
+
+
+        [HttpGet]
+        public IActionResult AddCityPage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddCityPage(CityModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                servicesmanager.Admin.AddCity(model);
+            }
+            return RedirectToAction("ViewAllCities");
+        }
+
+        [HttpGet]
+        public IActionResult CityPage(int id)
+        {
+            CityModel model = servicesmanager.Admin.GetCityModelById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult CityPage(CityModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                servicesmanager.Admin.CahngeCity(model);
+            }
+
+            return CityPage(model.Id);
+        }
+
+        public IActionResult CityRemove(int id)
+        {
+            servicesmanager.Admin.RemoveCityById(id);
             return RedirectToAction("ViewAllSensorType");
         }
     }

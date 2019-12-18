@@ -128,6 +128,11 @@ namespace BusinessLayer.Services
             dataManager.SensorTypesRepository.Create(sensorType);
         }
 
+        public IEnumerable<City> GetAllCities()
+        {
+            return dataManager.CitiesRepository.GetList();
+        }
+
         public SensorTypeModel GetSensorTypeModelById(int id)
         {
             SensorType sensorType = dataManager.SensorTypesRepository.GetItem(id);
@@ -158,6 +163,45 @@ namespace BusinessLayer.Services
                 SizeFine = model.SizeFine
             };
             dataManager.SensorTypesRepository.Update(sensorType);
+        }
+
+        public void AddCity(CityModel model)
+        {
+            City city = new City();
+            city.Country = model.Country;
+            city.Name = model.Name;
+            city.Status = model.Status;
+            dataManager.CitiesRepository.Create(city);
+        }
+
+        public CityModel GetCityModelById(int id)
+        {
+            City city = dataManager.CitiesRepository.GetItem(id);
+            CityModel model = new CityModel
+            {
+                Country = city.Country,
+                Name = city.Name,
+                Status = city.Status
+            };
+
+            return model;
+        }
+
+        public void RemoveCityById(int id)
+        {
+            dataManager.CitiesRepository.Delete(id);
+        }
+
+        public void CahngeCity(CityModel model)
+        {
+            City city = new City
+            {
+                Id = model.Id,
+                Country = model.Country,
+                Name = model.Name,
+                Status = model.Status
+            };
+            dataManager.CitiesRepository.Update(city);
         }
 
         public void RemoveSensorTypeById(int id)

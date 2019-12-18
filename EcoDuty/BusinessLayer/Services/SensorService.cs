@@ -16,17 +16,28 @@ namespace BusinessLayer.Services
             this.dataManager = dataManager;
         }
 
-        public void Test(SensorAPIModel model)
+        public void SensorPOST(SensorAPIModel model)
         {
             Sensor sensor = dataManager.SensorsRepository.GetSensorBySerialNumber(model.SerialNumber);
-            Fine fine = new Fine
+            if(sensor != null)
             {
-                Sensor = sensor,
-                SensorId = sensor.Id,
-                Description = "Превышение нормы",
-                SizeFine = 400
-            };
-            dataManager.FinesRepository.Create(fine);
+                FineService fineService = new FineService(dataManager);
+                switch (sensor.SensorType.ResType)
+                {
+                    case "Int":
+                        sensor.CurrentInt = model.CurrentInt;
+                        fineService.SensorFineInt(sensor);
+                        break;
+                    case "String":
+                        sensor.CurrentString = model.CurrentString;
+                        //fineService.SensorFineString(sensor);
+                        break;
+                    case "Bool":
+                        sensor.CurrentBool = model.CurrentBool;
+                        fineService.SensorFineBool(sensor);
+                        break;
+                }
+            }
         }
     }
 }

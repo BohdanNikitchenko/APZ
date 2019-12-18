@@ -30,7 +30,7 @@ namespace EcoDuty.Controllers
         [HttpPost]
         public void PostSensor(SensorAPIModel model)
         {
-            servicesmanager.Sensor.Test(model);
+            servicesmanager.Sensor.SensorPOST(model);
         }
     }
 }
