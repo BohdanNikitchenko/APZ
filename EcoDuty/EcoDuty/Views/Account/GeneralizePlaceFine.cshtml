@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Place>
+@{
+    ViewData["Title"] = "GeneralizePlaceFine";
+}
+
+<h1>GeneralizePlaceFine</h1>
+
+@foreach (var place in Model)
+{
+    if (place.Address != null)
+    {
+        <div>
+            <br />
+            <a href='@Url.Action("PlacePage","Account", new{id = place.Id})' class="link__dish">
+                <p>Соответствия нормам экологических стандартов</p>
+                <p>адресс недвижимости @place.Address</p>
+                <p>Количество штрафных баллов @place.SizeFine</p>
+            </a>
+            <br />
+        </div>
+    }
+    else
+    {
+        <div>
+            <br />
+            <a href='@Url.Action("PlacePage","Account", new{id = place.Id})' class="link__dish">
+                <p>Соответствия нормам экологических стандартов</p>
+                <p>недвижимость была удалена</p>
+                <p>Количество штрафных баллов @place.SizeFine</p>
+            </a>
+            <br />
+        </div>
+    }
+
+}

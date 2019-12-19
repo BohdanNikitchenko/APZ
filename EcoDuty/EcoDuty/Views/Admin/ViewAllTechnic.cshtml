@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Technic>
+@{
+    ViewData["Title"] = "ViewAllTechnic";
+}
+
+<h1>ViewAllTechnic</h1>
+@foreach (var technic in Model)
+{
+    if (technic.AutoNumber != null)
+    {
+        <div>
+            <br />
+            <a href='@Url.Action("TechnicPage","Account", new{id = technic.Id})' class="link__dish">@technic.AutoNumber</a>
+            <a href='@Url.Action("TechnicRemove","Admin",new{id = technic.Id})' class="link__dish">Delete</a>
+            <br />
+        </div>
+    }
+    else
+    {
+        <div>
+            <br />
+            <a href='@Url.Action("TechnicPage","Account", new{id = technic.Id})' class="link__dish">@technic.Id (delete by User)</a>
+            <a href='@Url.Action("TechnicRemove","Admin",new{id = technic.Id})' class="link__dish">Delete</a>
+            <br />
+        </div>
+    }
+}

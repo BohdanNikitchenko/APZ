@@ -48,13 +48,14 @@ namespace BusinessLayer.Services
         {
             User user = dataManager.UsersRepository.FindUserByPassport(name);
             UserModel model = new UserModel(user);
-            int sumTechnicFine = user.Technics.Sum(x => x.SizeFine);
-            int sumPlaceFine = user.Places.Sum(x => x.SizeFine);
-            //int sumSensorFine = user.Sensors.Sum(x => x.Fines.Sum(c => c.SizeFine));
-            int sumSensorFine = user.Sensors
-                .Sum(x => dataManager.FinesRepository
-                .GetSumFinesById(x.Id));
-            model.SumSizeFine = sumTechnicFine + sumPlaceFine + sumSensorFine;
+
+            //int sumTechnicFine = user.Technics.Sum(x => x.SizeFine);
+            //int sumPlaceFine = user.Places.Sum(x => x.SizeFine);
+            //int sumSensorFine = user.Sensors
+            //    .Sum(x => dataManager.FinesRepository
+            //    .GetSumFinesById(x.Id));
+            //model.SumSizeFine = sumTechnicFine + sumPlaceFine + sumSensorFine;
+            model.SumSizeFine = FineService.GetSumUserFines(user, dataManager);
             return model;
         }
 
@@ -74,14 +75,17 @@ namespace BusinessLayer.Services
             return null;
         }
 
-        public IEnumerable<Place> GetAllPlaces()
+        public IEnumerable<Place> GetAllPlaces(string name)
         {
-            return dataManager.PlacesRepository.GetList();
+            User user = FindUserByPassport(name);
+
+            return dataManager.PlacesRepository.GetList().Where(x => x.UserId == user.Id);
         }
 
-        public IEnumerable<Technic> GetAllTechnics()
+        public IEnumerable<Technic> GetAllTechnics(string name)
         {
-            return dataManager.TechnicsRepository.GetList();
+            User user = FindUserByPassport(name);
+            return dataManager.TechnicsRepository.GetList().Where(x => x.UserId == user.Id);
         }
 
        
@@ -116,11 +120,14 @@ namespace BusinessLayer.Services
             return dataManager.PlacesRepository.GetItem(id);
         }
 
-        public void RemovePlaceById(int id)
+        public void RemovePlaceById(int id, string name)
         {
             Place place = GetPlaceById(id);
-            place.Address = null;
-            dataManager.PlacesRepository.Update(place);
+            if(place.User.Passport == name)
+            {
+                place.Address = null;
+                dataManager.PlacesRepository.Update(place);
+            }
             //dataManager.PlacesRepository.Delete(id);
         }
 
@@ -131,9 +138,10 @@ namespace BusinessLayer.Services
                     Value = c.Id.ToString() }).ToList();
         }
 
-        public IEnumerable<Sensor> GetAllSensors()
+        public IEnumerable<Sensor> GetAllSensors(string name)
         {
-            return dataManager.SensorsRepository.GetList();
+            User user = FindUserByPassport(name);
+            return dataManager.SensorsRepository.GetList().Where(x => x.UserId == user.Id);
         }
 
         public void AddTechnic(AddTechnicModel model, string name)
@@ -176,11 +184,14 @@ namespace BusinessLayer.Services
             return dataManager.TechnicsRepository.GetItem(id);
         }
 
-        public void RemoveTechnicById(int id)
+        public void RemoveTechnicById(int id, string name)
         {
             Technic technic = GetTechnicById(id);
-            technic.AutoNumber = null;
-            dataManager.TechnicsRepository.Update(technic);
+            if(technic.User.Passport == name)
+            {
+                technic.AutoNumber = null;
+                dataManager.TechnicsRepository.Update(technic);
+            }
             //dataManager.TechnicsRepository.Delete(id);
         }
 
@@ -211,11 +222,20 @@ namespace BusinessLayer.Services
             }
         }
 
-        public void RemoveSensorById(int id)
+        public IEnumerable<Fine> GetAllFines(string name)
+        {
+            User user = FindUserByPassport(name);
+            return dataManager.FinesRepository.GetList().Where(x => x.Sensor.UserId == user.Id);
+        }
+
+        public void RemoveSensorById(int id, string name)
         {
             Sensor sensor = GetSensorById(id);
-            sensor.SerialNumber = null;
-            dataManager.SensorsRepository.Update(sensor);
+            if (sensor.User.Passport == name)
+            {
+                sensor.SerialNumber = null;
+                dataManager.SensorsRepository.Update(sensor);
+            }
         }
 
         public Sensor GetSensorById(int id)

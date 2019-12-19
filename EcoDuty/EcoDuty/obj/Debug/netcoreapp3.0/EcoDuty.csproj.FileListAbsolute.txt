@@ -171,3 +171,11 @@ D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Account\AddSen
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\ViewAllCities.cshtml.g.cs
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\CityPage.cshtml.g.cs
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\AddCityPage.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\ViewAllUser.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\UserPage.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Account\GeneralizeTechnicFine.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Account\GeneralizePlaceFine.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Account\GeneralizeSensorFine.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\ViewAllPlace.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\ViewAllTechnic.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\ViewAllSensor.cshtml.g.cs

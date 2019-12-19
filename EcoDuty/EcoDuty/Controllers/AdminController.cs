@@ -136,6 +136,13 @@ namespace EcoDuty.Controllers
             return View(sensorTypes);
         }
 
+        [HttpGet]
+        public IActionResult ViewAllUser()
+        {
+            IEnumerable<User> users = servicesmanager.Admin.GetAllUsers();
+            return View(users);
+        }
+
 
         [HttpGet]
         public IActionResult ViewAllCities()
@@ -225,6 +232,60 @@ namespace EcoDuty.Controllers
         {
             servicesmanager.Admin.RemoveCityById(id);
             return RedirectToAction("ViewAllSensorType");
+        }
+
+
+        [HttpGet]
+        public IActionResult UserPage(int id)
+        {
+            UserModel model = servicesmanager.Admin.GetUserModelById(id);
+            return View(model);
+        }
+
+        public IActionResult ChangeUserRole(int id)
+        {
+            servicesmanager.Admin.ChangeUserRole(id);
+            //return UserPage(id);
+            return RedirectToAction("UserPage", new { id });
+        }
+
+        [HttpGet]
+        public IActionResult ViewAllPlace(string name)
+        {
+            IEnumerable<Place> places = servicesmanager.Users.GetAllPlaces(name);
+            return View(places);
+        }
+
+        [HttpGet]
+        public IActionResult ViewAllTechnic(string name)
+        {
+            IEnumerable<Technic> technics = servicesmanager.Users.GetAllTechnics(name);
+            return View(technics);
+        }
+
+        [HttpGet]
+        public IActionResult ViewAllSensor(string name)
+        {
+            IEnumerable<Sensor> sensors = servicesmanager.Users.GetAllSensors(name);
+            return View(sensors);
+        }
+
+        public IActionResult PlaceRemove(int id)
+        {
+            string nameUser = servicesmanager.Admin.RemovePlaceById(id);
+            return RedirectToAction("ViewAllPlace", new { name = nameUser });
+        }
+
+        public IActionResult TechnicRemove(int id)
+        {
+            string nameUser = servicesmanager.Admin.RemoveTechnicById(id);
+            return RedirectToAction("ViewAllTechnic", new { name = nameUser });
+        }
+
+        public IActionResult SensorRemove(int id)
+        {
+            string nameUser = servicesmanager.Admin.RemoveSensorById(id);
+            return RedirectToAction("ViewAllSensor", new { name = nameUser });
         }
     }
 }

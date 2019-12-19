@@ -1,7 +1,17 @@
-﻿@model User
-@{
+﻿@model IEnumerable<CityRatingModel>
     ViewData["Title"] = "Home Page";
 }
+<br />
+<br />
+<br />
+<br />
 
+<h1>Rating Cities</h1>
 
-<p>@Model.Passport</p>
+@foreach(var city in Model)
+{
+    <div>
+        <br />
+        <p>@city.Country  @city.Name  @city.SumFines</p>
+    </div>
+}

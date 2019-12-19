@@ -15,10 +15,15 @@
 <p>Общая сумма штрафных баллов : @Model.SumSizeFine</p>
 <br />
 <br />
-@if (Model.Role == "admin")
-{
-    <a href="@Url.Action("Index","Admin")">Admin</a>
-}
+<br />
+<br />
+<a href='@Url.Action("GeneralizeTechnicFine","Account", new{name = @Model.Passport})' class="link__dish">Generalize Technic Fines</a>
+<br />
+<br />
+<a href='@Url.Action("GeneralizePlaceFine","Account", new{name = @Model.Passport})' class="link__dish">Generalize Place Fine</a>
+<br />
+<br />
+<a href='@Url.Action("GeneralizeSensorFine","Account", new{name = @Model.Passport})' class="link__dish">Generalize Sensor Fine</a>
 <br />
 <br />
 <a href='@Url.Action("ViewAllPlace","Account")' class="link__dish">Places</a>

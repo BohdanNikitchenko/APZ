@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Technic>
+@{
+    ViewData["Title"] = "GeneralizeTechnicFine";
+}
+
+<h1>GeneralizeTechnicFine</h1>
+
+@foreach (var technic in Model)
+{
+    if (technic.AutoNumber != null)
+    {
+        <div>
+            <br />
+            <a href='@Url.Action("TechnicPage","Account", new{id = technic.Id})' class="link__dish">
+                <p>Соответствия нормам экологических стандартов</p>
+                <p>регистрационный номер техники @technic.AutoNumber</p>
+                <p>Количество штрафных баллов @technic.SizeFine</p>
+            </a>
+            <br />
+        </div>
+    }
+    else
+    {
+        <div>
+            <br />
+            <a href='@Url.Action("TechnicPage","Account", new{id = technic.Id})' class="link__dish">
+                <p>Соответствия нормам экологических стандартов</p>
+                <p>техника была удаленна</p>
+                <p>Количество штрафных баллов @technic.SizeFine</p>
+            </a>
+            <br />
+        </div>
+    }
+
+}

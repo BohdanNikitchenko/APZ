@@ -2,6 +2,7 @@
 using DataLayer.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BusinessLayer.Services
@@ -79,6 +80,33 @@ namespace BusinessLayer.Services
         internal void SensorFineString(Sensor sensor)
         {
             throw new NotImplementedException();
+        }
+
+        internal static int GetSumUserFines(User user, DataManager dataManager)
+        {
+           int result = 0;
+            result += user.Technics.Sum(x => x.SizeFine);
+            result += user.Places.Sum(x => x.SizeFine);
+            result += user.Sensors
+                .Sum(x => dataManager.FinesRepository
+                .GetSumFinesById(x.Id));
+            //result = sumSensorFine + sumTechnicFine + sumPlaceFine;
+            return result;
+        }
+
+        internal static int GetSumUserFines(int userId, DataManager dataManager)
+        {
+            User user = dataManager.UsersRepository.GetItem(userId);
+            int result = 0;
+            if(user != null)
+            {
+                result += user.Technics.Sum(x => x.SizeFine);
+                result += user.Places.Sum(x => x.SizeFine);
+                result += user.Sensors
+                    .Sum(x => dataManager.FinesRepository
+                    .GetSumFinesById(x.Id));
+            }
+            return result;
         }
     }
 }

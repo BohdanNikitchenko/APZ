@@ -113,7 +113,8 @@ namespace EcoDuty.Controllers
         [HttpGet]
         public IActionResult ViewAllPlace()
         {
-            IEnumerable<Place> places = servicesmanager.Users.GetAllPlaces();
+            
+            IEnumerable<Place> places = servicesmanager.Users.GetAllPlaces(User.Identity.Name);
             return View(places);
         }
 
@@ -121,14 +122,14 @@ namespace EcoDuty.Controllers
         [HttpGet]
         public IActionResult ViewAllTechnic()
         {
-            IEnumerable<Technic> technics = servicesmanager.Users.GetAllTechnics();
+            IEnumerable<Technic> technics = servicesmanager.Users.GetAllTechnics(User.Identity.Name);
             return View(technics);
         }
 
         [HttpGet]
         public IActionResult ViewAllSensor()
         {
-            IEnumerable<Sensor> sensors = servicesmanager.Users.GetAllSensors();
+            IEnumerable<Sensor> sensors = servicesmanager.Users.GetAllSensors(User.Identity.Name);
             return View(sensors);
         }
 
@@ -161,7 +162,7 @@ namespace EcoDuty.Controllers
 
         public IActionResult PlaceRemove(int id)
         {
-            servicesmanager.Users.RemovePlaceById(id);
+            servicesmanager.Users.RemovePlaceById(id, User.Identity.Name);
             return RedirectToAction("ViewAllPlace");
         }
 
@@ -195,7 +196,7 @@ namespace EcoDuty.Controllers
 
         public IActionResult TechnicRemove(int id)
         {
-            servicesmanager.Users.RemoveTechnicById(id);
+            servicesmanager.Users.RemoveTechnicById(id, User.Identity.Name);
             return RedirectToAction("ViewAllTechnic");
         }
 
@@ -228,9 +229,37 @@ namespace EcoDuty.Controllers
 
         public IActionResult SensorRemove(int id)
         {
-            servicesmanager.Users.RemoveSensorById(id);
+            servicesmanager.Users.RemoveSensorById(id, User.Identity.Name);
             return RedirectToAction("ViewAllSensor");
         }
+
+
+
+        [HttpGet]
+        public IActionResult GeneralizeTechnicFine(string name)
+        {
+            
+            IEnumerable<Technic> technics = servicesmanager.Users.GetAllTechnics(name);
+            //return View(technics);
+            return View(technics);
+        }
+
+        [HttpGet]
+        public IActionResult GeneralizePlaceFine(string name)
+        {
+
+            IEnumerable<Place> places = servicesmanager.Users.GetAllPlaces(name);
+            //return View(technics);
+            return View(places);
+        }
+
+        [HttpGet]
+        public IActionResult GeneralizeSensorFine(string name)
+        {
+            IEnumerable<Fine> fines = servicesmanager.Users.GetAllFines(name);
+            return View(fines);
+        }
+
     }
 
 

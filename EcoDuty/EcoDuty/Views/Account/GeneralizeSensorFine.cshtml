@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Fine>
+@{
+    ViewData["Title"] = "GeneralizeSensorFine";
+}
+
+<h1>GeneralizeSensorFine</h1>
+@foreach (var fine in Model)
+{
+
+    <div>
+        <br />
+        <a href='@Url.Action("SensorPage","Account", new{id = fine.SensorId})' class="link__dish"> 
+            <p>@fine.Description</p>
+            <p>Количество штрафных баллов @fine.SizeFine</p>
+        </a>
+        <br />
+    </div>
+
+}

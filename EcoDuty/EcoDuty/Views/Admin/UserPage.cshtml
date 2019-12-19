@@ -1,0 +1,35 @@
+﻿@model UserModel
+@{
+    ViewData["Title"] = "UserPage";
+}
+
+<h1>UserPage</h1>
+
+<p>@Model.Name</p>
+<p>@Model.Surname</p>
+<p>@Model.Patronymic</p>
+<p>@Model.Email</p>
+<p>@Model.Passport</p>
+<p>@Model.TaxIdentity</p>
+<p>@Model.City.Name</p>
+<p>@Model.Role</p>  <a href='@Url.Action("ChangeUserRole","Admin", new{id = @Model.Id})'>Change role</a>
+<p>Общая сумма штрафных баллов : @Model.SumSizeFine</p>
+<br />
+<br />
+<a href='@Url.Action("GeneralizeTechnicFine","Account", new{name = @Model.Passport})' class="link__dish">Generalize Technic Fines</a>
+<br />
+<br />
+<a href='@Url.Action("GeneralizePlaceFine","Account", new{name = @Model.Passport})' class="link__dish">Generalize Place Fine</a>
+<br />
+<br />
+<a href='@Url.Action("GeneralizeSensorFine","Account", new{name =  @Model.Passport})' class="link__dish">Generalize Sensor Fine</a>
+<br />
+<br />
+
+<a href='@Url.Action("ViewAllPlace","Admin", new{name = @Model.Passport})' class="link__dish">Places</a>
+<br />
+<br />
+<a href='@Url.Action("ViewAllTechnic","Admin", new{name = @Model.Passport})' class="link__dish">Technics</a>
+<br />
+<br />
+<a href='@Url.Action("ViewAllSensor","Admin", new{name = @Model.Passport})' class="link__dish">Sensors</a>

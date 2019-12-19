@@ -3,6 +3,7 @@ using DAL;
 using DataLayer.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BusinessLayer.Services
@@ -128,6 +129,11 @@ namespace BusinessLayer.Services
             dataManager.SensorTypesRepository.Create(sensorType);
         }
 
+        public IEnumerable<User> GetAllUsers()
+        {
+            return dataManager.UsersRepository.GetList();
+        }
+
         public IEnumerable<City> GetAllCities()
         {
             return dataManager.CitiesRepository.GetList();
@@ -204,9 +210,57 @@ namespace BusinessLayer.Services
             dataManager.CitiesRepository.Update(city);
         }
 
+        public void ChangeUserRole(int id)
+        {
+            User user = dataManager.UsersRepository.GetItem(id);
+            if(user.Role == "user")
+            {
+                user.Role = "admin";
+            }
+            else
+            {
+                user.Role = "user";
+            }
+            dataManager.UsersRepository.Update(user);
+        }
+
+        public UserModel GetUserModelById(int id)
+        {
+            User user = dataManager.UsersRepository.GetItem(id);
+            UserModel model = new UserModel(user);
+            int sumTechnicFine = user.Technics.Sum(x => x.SizeFine);
+            int sumPlaceFine = user.Places.Sum(x => x.SizeFine);
+            int sumSensorFine = user.Sensors
+                .Sum(x => dataManager.FinesRepository
+                .GetSumFinesById(x.Id));
+            model.SumSizeFine = sumTechnicFine + sumPlaceFine + sumSensorFine;
+            return model;
+        }
+
         public void RemoveSensorTypeById(int id)
         {
             dataManager.SensorTypesRepository.Delete(id);
+        }
+
+        public string RemovePlaceById(int id)
+        {
+            string name = dataManager.PlacesRepository.GetItem(id).User.Passport;
+            dataManager.PlacesRepository.Delete(id);
+            return name;
+        }
+
+        public string RemoveTechnicById(int id)
+        {
+            string name = dataManager.TechnicsRepository.GetItem(id).User.Passport;
+            dataManager.TechnicsRepository.Delete(id);
+            return name;
+        }
+
+        public string RemoveSensorById(int id)
+        {
+            string name = dataManager.SensorsRepository.GetItem(id).User.Passport;
+            dataManager.SensorsRepository.Delete(id);
+            return name;
         }
     }
 }

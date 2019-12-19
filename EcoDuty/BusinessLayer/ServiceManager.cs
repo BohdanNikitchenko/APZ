@@ -12,6 +12,7 @@ namespace BusinessLayer
         private UserService userService;
         private AdminService adminService;
         private SensorService sensorService;
+        private RatingService ratingService;
 
         public ServiceManager(DataManager dataManager)
         {
@@ -19,10 +20,11 @@ namespace BusinessLayer
             userService = new UserService(dataManager);
             adminService = new AdminService(dataManager);
             sensorService = new SensorService(dataManager);
+            ratingService = new RatingService(dataManager);
         }
         public UserService Users { get { return userService; } }
         public AdminService Admin { get { return adminService; } }
         public SensorService Sensor { get { return sensorService; } }
-
+        public RatingService Rating { get { return ratingService; } }
     }
 }

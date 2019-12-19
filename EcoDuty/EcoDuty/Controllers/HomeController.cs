@@ -9,20 +9,31 @@ using Microsoft.Extensions.Logging;
 using EcoDuty.Models;
 using DAL;
 using DataLayer.Entities;
+using BusinessLayer.Models;
 
 namespace EcoDuty.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        public HomeController(ILogger<HomeController> logger)
+        //private readonly ILogger<HomeController> _logger;
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
+        private DataManager datamanager;
+        private ServiceManager servicesmanager;
+
+        public HomeController(DataManager dataManager)
         {
-            _logger = logger;
+            datamanager = dataManager;
+            servicesmanager = new ServiceManager(dataManager);
         }
 
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "Account");
+            IEnumerable<CityRatingModel> places = servicesmanager.Rating.GetAllCities();
+            return View(places);
+            //return RedirectToAction("Index", "Account");
         }
 
         public IActionResult Privacy()

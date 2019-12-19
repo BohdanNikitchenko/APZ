@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Place>
+@{
+    ViewData["Title"] = "ViewAllPlace";
+}
+
+<h1>ViewAllPlace</h1>
+@foreach (var place in Model)
+{
+    if (place.Address != null)
+    {
+        <div>
+            <br />
+            <a href='@Url.Action("PlacePage","Account", new{id = place.Id})' class="link__dish">@place.Address</a>
+            <a href='@Url.Action("PlaceRemove","Admin",new{id = place.Id})' class="link__dish">Delete</a>
+            <br />
+        </div>
+    }
+    else
+    {
+        <div>
+            <br />
+            <a href='@Url.Action("PlacePage","Account", new{id = place.Id})' class="link__dish">@place.Id (delete by User)</a>
+            <a href='@Url.Action("PlaceRemove","Admin",new{id = place.Id})' class="link__dish">Delete</a>
+            <br />
+        </div>
+    }
+}
