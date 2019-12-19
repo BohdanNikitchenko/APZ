@@ -24,17 +24,16 @@ namespace BusinessLayer.Services
                 return null;
             }
             User user = new User();
-            City city = dataManager.CitiesRepository.GetItemByName(u.City);
-            user.Name = u.Name;
-            user.Surname = u.Surname;
             user.Password = HashStaticService.HashPassword(u.Password);
-            user.Patronymic = u.Patronymic;
+            City city = dataManager.CitiesRepository.GetItemByName(u.City);
+            user.Name = EncryptingStaticService.Encrypt(u.Name, user.Password);
+            user.Surname = EncryptingStaticService.Encrypt(u.Surname, user.Password);
+            user.Patronymic = EncryptingStaticService.Encrypt(u.Patronymic, user.Password);
             user.Passport = u.Passport;
-            user.Surname = u.Surname;
             user.CityId = city.Id;
-            user.TaxIdentity = u.TaxIdentity;
+            user.TaxIdentity = EncryptingStaticService.Encrypt(u.TaxIdentity, user.Password);
             user.City = city;
-            user.Email = u.Email;
+            user.Email = EncryptingStaticService.Encrypt(u.Email, user.Password);
             dataManager.UsersRepository.Create(user);
             return user;
         }
@@ -47,6 +46,7 @@ namespace BusinessLayer.Services
         public UserModel FindUserModelByPassport(string name)
         {
             User user = dataManager.UsersRepository.FindUserByPassport(name);
+            user = EncryptingStaticService.Decrypt(user, user.Password);
             UserModel model = new UserModel(user);
 
             //int sumTechnicFine = user.Technics.Sum(x => x.SizeFine);
@@ -61,12 +61,15 @@ namespace BusinessLayer.Services
 
         public User FindUserByPassport(string name)
         {
-            return dataManager.UsersRepository.FindUserByPassport(name);
+            User user = dataManager.UsersRepository.FindUserByPassport(name);
+
+            return EncryptingStaticService.Decrypt(user, user.Password);
         }
 
         public User IsRegistrated(string passport, string password)
         {
-            var obj = dataManager.UsersRepository.FindUserByPassport(passport);
+            //var obj = dataManager.UsersRepository.FindUserByPassport(passport);
+            var obj = FindUserByPassport(passport);
             if (HashStaticService.VerifyHashedPassword(obj.Password, password))
             {
                 return obj;
@@ -104,7 +107,7 @@ namespace BusinessLayer.Services
             PlaceType placeType = dataManager.PlaceTypesRepository.GetItem(Convert.ToInt32(model.PlaceTypeId));
             if(user != null && placeType != null && dataManager.PlacesRepository.FindPlaceByUser_Address(user.Id, model.Address) == null)
             {
-                place.User = user;
+                //place.User = user;
                 place.UserId = user.Id;
                 place.PlaceTypeId = placeType.Id;
                 place.PlaceType = placeType;
@@ -151,7 +154,7 @@ namespace BusinessLayer.Services
             TechnicType technicType = dataManager.TechnicTypesRepository.GetItem(Convert.ToInt32(model.TechnicTypeId));
             if (user != null && technicType != null && dataManager.TechnicsRepository.FindTechnicByUser_AutoNumber(user.Id, model.AutoNumber) == null)
             {
-                technic.User = user;
+                //technic.User = user;
                 technic.UserId = user.Id;
                 technic.TechnicTypeId = technicType.Id;
                 technic.TechnicType = technicType;
@@ -212,7 +215,7 @@ namespace BusinessLayer.Services
             SensorType sensorType = dataManager.SensorTypesRepository.GetItem(Convert.ToInt32(model.SensorTypeId));
             if (user != null && sensorType != null && dataManager.SensorsRepository.FindSensorByUser_SerialNumber(user.Id, model.SerialNumber) == null)
             {
-                sensor.User = user;
+                //sensor.User = user;
                 sensor.UserId = user.Id;
                 sensor.SensorTypeId = sensorType.Id;
                 sensor.SensorType = sensorType;

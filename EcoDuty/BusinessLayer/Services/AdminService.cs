@@ -131,7 +131,13 @@ namespace BusinessLayer.Services
 
         public IEnumerable<User> GetAllUsers()
         {
-            return dataManager.UsersRepository.GetList();
+            IEnumerable<User> users = dataManager.UsersRepository.GetList();
+            List<User> result = new List<User>();
+            foreach(var user in users)
+            {
+                result.Add(EncryptingStaticService.Decrypt(user, user.Password));
+            }
+            return result;
         }
 
         public IEnumerable<City> GetAllCities()
@@ -213,6 +219,7 @@ namespace BusinessLayer.Services
         public void ChangeUserRole(int id)
         {
             User user = dataManager.UsersRepository.GetItem(id);
+            //user = EncryptingStaticService.Decrypt(user, user.Password);
             if(user.Role == "user")
             {
                 user.Role = "admin";
@@ -227,6 +234,7 @@ namespace BusinessLayer.Services
         public UserModel GetUserModelById(int id)
         {
             User user = dataManager.UsersRepository.GetItem(id);
+            user = EncryptingStaticService.Decrypt(user, user.Password);
             UserModel model = new UserModel(user);
             int sumTechnicFine = user.Technics.Sum(x => x.SizeFine);
             int sumPlaceFine = user.Places.Sum(x => x.SizeFine);
