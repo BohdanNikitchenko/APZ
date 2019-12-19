@@ -16,12 +16,14 @@ namespace DAL
         private IUsersRepository usersRepository;
         private IPlaceRepository placesRepository;
         private IPlaceTypeRepository placeTypesRepository;
+        private ICryptoRepository cryptoRepository;
 
         public DataManager(ICitiesRepository citiesRepository, IFinesRepository finesRepository,
             ISensorsRepository sensorsRepository,
             ISensorTypesRepository sensorTypesRepository, ITechnicsRepository technicsRepository,
             ITechnicTypesRepository technicTypesRepository, IUsersRepository usersRepository,
-            IPlaceRepository placesRepository, IPlaceTypeRepository placeTypesRepository)
+            IPlaceRepository placesRepository, IPlaceTypeRepository placeTypesRepository,
+            ICryptoRepository cryptoRepository)
         {
             this.citiesRepository = citiesRepository;
             this.finesRepository = finesRepository;
@@ -32,6 +34,7 @@ namespace DAL
             this.usersRepository = usersRepository;
             this.placesRepository = placesRepository;
             this.placeTypesRepository = placeTypesRepository;
+            this.cryptoRepository = cryptoRepository;
         }
 
         public ICitiesRepository CitiesRepository { get{ return citiesRepository;} }
@@ -68,6 +71,11 @@ namespace DAL
         public IPlaceTypeRepository PlaceTypesRepository
         {
             get { return placeTypesRepository; }
+        }
+
+        public ICryptoRepository CryptoRepository
+        {
+            get { return cryptoRepository; }
         }
     }
 }

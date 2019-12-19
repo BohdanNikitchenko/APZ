@@ -1229,6 +1229,20 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "CryptoDataLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.0.1"
+        },
+        "compile": {
+          "bin/placeholder/CryptoDataLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CryptoDataLayer.dll": {}
+        }
+      },
       "DataLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -4863,6 +4877,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "CryptoDataLayer/1.0.0": {
+      "type": "project",
+      "path": "../CryptoDataLayer/CryptoDataLayer.csproj",
+      "msbuildProject": "../CryptoDataLayer/CryptoDataLayer.csproj"
+    },
     "DataLayer/1.0.0": {
       "type": "project",
       "path": "../DataLayer/DataLayer.csproj",
@@ -4871,6 +4890,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
+      "CryptoDataLayer >= 1.0.0",
       "DataLayer >= 1.0.0"
     ]
   },
@@ -4904,6 +4924,9 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
+            "D:\\Github\\APZ\\EcoDuty\\CryptoDataLayer\\CryptoDataLayer.csproj": {
+              "projectPath": "D:\\Github\\APZ\\EcoDuty\\CryptoDataLayer\\CryptoDataLayer.csproj"
+            },
             "D:\\Github\\APZ\\EcoDuty\\DataLayer\\DataLayer.csproj": {
               "projectPath": "D:\\Github\\APZ\\EcoDuty\\DataLayer\\DataLayer.csproj"
             }

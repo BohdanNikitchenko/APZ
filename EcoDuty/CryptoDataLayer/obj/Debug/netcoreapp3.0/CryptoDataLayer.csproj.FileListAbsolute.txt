@@ -1,0 +1,10 @@
+D:\Github\APZ\EcoDuty\CryptoDataLayer\bin\Debug\netcoreapp3.0\CryptoDataLayer.deps.json
+D:\Github\APZ\EcoDuty\CryptoDataLayer\bin\Debug\netcoreapp3.0\CryptoDataLayer.dll
+D:\Github\APZ\EcoDuty\CryptoDataLayer\obj\Debug\netcoreapp3.0\CryptoDataLayer.csprojAssemblyReference.cache
+D:\Github\APZ\EcoDuty\CryptoDataLayer\obj\Debug\netcoreapp3.0\CryptoDataLayer.AssemblyInfoInputs.cache
+D:\Github\APZ\EcoDuty\CryptoDataLayer\obj\Debug\netcoreapp3.0\CryptoDataLayer.AssemblyInfo.cs
+D:\Github\APZ\EcoDuty\CryptoDataLayer\bin\Debug\netcoreapp3.0\CryptoDataLayer.runtimeconfig.json
+D:\Github\APZ\EcoDuty\CryptoDataLayer\bin\Debug\netcoreapp3.0\CryptoDataLayer.runtimeconfig.dev.json
+D:\Github\APZ\EcoDuty\CryptoDataLayer\bin\Debug\netcoreapp3.0\CryptoDataLayer.pdb
+D:\Github\APZ\EcoDuty\CryptoDataLayer\obj\Debug\netcoreapp3.0\CryptoDataLayer.dll
+D:\Github\APZ\EcoDuty\CryptoDataLayer\obj\Debug\netcoreapp3.0\CryptoDataLayer.pdb

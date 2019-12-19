@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CryptoDataLayer;
 using DAL;
 using DataLayer;
 using Microsoft.AspNetCore;
@@ -25,6 +26,7 @@ namespace EcoDuty
                 var services = scope.ServiceProvider;
 
                 var context = services.GetRequiredService<EFDBContext>();
+                var context1 = services.GetRequiredService<CryptoDBContext>();
                 Initializer.InitData(context);
             }
 

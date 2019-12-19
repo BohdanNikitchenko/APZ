@@ -34,5 +34,15 @@ namespace BusinessLayer.Services
             }
             return cityRatingModels.OrderBy(x => x.SumFines);
         }
+
+        public void Test()
+        {
+            dataManager.CryptoRepository.Create(new CryptoDataLayer.Entities.Crypto
+            {
+                UserId = 1,
+                Pass = "333"
+            });
+            
+        }
     }
 }

@@ -179,3 +179,5 @@ D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Account\Genera
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\ViewAllPlace.cshtml.g.cs
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\ViewAllTechnic.cshtml.g.cs
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\Razor\Views\Admin\ViewAllSensor.cshtml.g.cs
+D:\Github\APZ\EcoDuty\EcoDuty\bin\Debug\netcoreapp3.0\CryptoDataLayer.dll
+D:\Github\APZ\EcoDuty\EcoDuty\bin\Debug\netcoreapp3.0\CryptoDataLayer.pdb

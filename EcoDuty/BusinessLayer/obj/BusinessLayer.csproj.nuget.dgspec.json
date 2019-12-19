@@ -69,6 +69,77 @@
         }
       }
     },
+    "D:\\Github\\APZ\\EcoDuty\\CryptoDataLayer\\CryptoDataLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Github\\APZ\\EcoDuty\\CryptoDataLayer\\CryptoDataLayer.csproj",
+        "projectName": "CryptoDataLayer",
+        "projectPath": "D:\\Github\\APZ\\EcoDuty\\CryptoDataLayer\\CryptoDataLayer.csproj",
+        "packagesPath": "C:\\Users\\nikbo\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\APZ\\EcoDuty\\CryptoDataLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nikbo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\Github\\APZ\\EcoDuty\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -95,6 +166,9 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
+              "D:\\Github\\APZ\\EcoDuty\\CryptoDataLayer\\CryptoDataLayer.csproj": {
+                "projectPath": "D:\\Github\\APZ\\EcoDuty\\CryptoDataLayer\\CryptoDataLayer.csproj"
+              },
               "D:\\Github\\APZ\\EcoDuty\\DataLayer\\DataLayer.csproj": {
                 "projectPath": "D:\\Github\\APZ\\EcoDuty\\DataLayer\\DataLayer.csproj"
               }

@@ -2460,10 +2460,25 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "CryptoDataLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.0.1"
+        },
+        "compile": {
+          "bin/placeholder/CryptoDataLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CryptoDataLayer.dll": {}
+        }
+      },
       "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
+          "CryptoDataLayer": "1.0.0",
           "DataLayer": "1.0.0"
         },
         "compile": {
@@ -7946,6 +7961,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "CryptoDataLayer/1.0.0": {
+      "type": "project",
+      "path": "../CryptoDataLayer/CryptoDataLayer.csproj",
+      "msbuildProject": "../CryptoDataLayer/CryptoDataLayer.csproj"
     },
     "DAL/1.0.0": {
       "type": "project",

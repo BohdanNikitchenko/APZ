@@ -36,6 +36,11 @@ namespace EcoDuty.Controllers
             //return RedirectToAction("Index", "Account");
         }
 
+        public void Test()
+        {
+            servicesmanager.Rating.Test();
+        }
+
         public IActionResult Privacy()
         {
             return View();

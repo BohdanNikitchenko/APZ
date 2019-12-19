@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
+    <ProjectReference Include="..\CryptoDataLayer\CryptoDataLayer.csproj" />
     <ProjectReference Include="..\DAL\DAL.csproj" />
     <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
   </ItemGroup>

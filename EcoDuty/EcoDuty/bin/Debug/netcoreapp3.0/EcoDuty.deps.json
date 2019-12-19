@@ -25,6 +25,7 @@
       "EcoDuty/1.0.0": {
         "dependencies": {
           "BusinessLayer": "1.0.0",
+          "CryptoDataLayer": "1.0.0",
           "DAL": "1.0.0",
           "DataLayer": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.0.1",
@@ -2390,8 +2391,21 @@
           "BusinessLayer.dll": {}
         }
       },
+      "CryptoDataLayer/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.0.1"
+        },
+        "runtime": {
+          "CryptoDataLayer.dll": {}
+        },
+        "compile": {
+          "CryptoDataLayer.dll": {}
+        }
+      },
       "DAL/1.0.0": {
         "dependencies": {
+          "CryptoDataLayer": "1.0.0",
           "DataLayer": "1.0.0"
         },
         "runtime": {
@@ -5378,6 +5392,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "BusinessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CryptoDataLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

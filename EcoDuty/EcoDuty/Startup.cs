@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CryptoDataLayer;
 using DAL;
 using DAL.Implementations;
 using DAL.Interfaces;
@@ -32,7 +33,9 @@ namespace EcoDuty
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = Configuration.GetConnectionString("DefaultConnection");
+            var connection1 = Configuration.GetConnectionString("CryptoConnection");
             services.AddDbContext<EFDBContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("DataLayer")));
+            services.AddDbContext<CryptoDBContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("CryptoDataLayer")));
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -54,6 +57,7 @@ namespace EcoDuty
             services.AddTransient<ITechnicTypesRepository, EFTechnicTypesRepository>();
             services.AddTransient<IPlaceRepository, EFPlacesRepository>();
             services.AddTransient<IPlaceTypeRepository, EFPlaceTypeRepository>();
+            services.AddTransient<ICryptoRepository, EFCryptoRepository>();
 
             services.AddScoped<DataManager>();
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
