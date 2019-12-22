@@ -1,32 +1,95 @@
-﻿@model LoginModel;
+﻿@model LoginModel
 @{
     ViewData["Title"] = "Login";
 }
+<style>
+   
 
+
+body{
+    margin: 0;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    background-color: #f5f8fa;
+}
+
+.navbar-laravel
+{
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+
+.navbar-brand , .nav-link, .my-form, .login-form
+{
+    font-family: Raleway, sans-serif;
+}
+
+.my-form
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.my-form .row
+{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.login-form
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.login-form .row
+{
+    margin-left: 0;
+    margin-right: 0;
+}
+</style>
 <h1>Login</h1>
-<div class="col-md-4">
-    <form asp-action="Login">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <span asp-validation-for="General" class="exit__errore"></span>
-        <div class="form-group">
-            <label asp-for="Passport" class="control-label"></label>
-            <input asp-for="Passport" class="form-control" />
-            <span asp-validation-for="Passport" class="text-danger"></span>
+<main class="login-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Login</div>
+                    <div class="card-body">
+                        <form asp-action="Login">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <span asp-validation-for="General" class="text-danger"></span>
+                            <div class="form-group row" >
+                                <label asp-for="Passport" class="col-md-4 col-form-label text-md-right">Passport number</label>
+                                <div class="col-md-6">
+                                    <input asp-for="Passport" class="form-control" />
+                                    <span asp-validation-for="Passport" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <div class="col-md-6">
+                                    <input asp-for="Password" class="form-control" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Login
+                                </button>
+                                <a href="@Url.Action("Index","Account")" class="btn btn-link">
+                                У вас еще нет аккаунта?
+                                </a>
+                            </div>
+                        </form>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label asp-for="Password" class="control-label"></label>
-            <input asp-for="Password" class="form-control" />
-            <span asp-validation-for="Password" class="text-danger"></span>
-        </div>
+    </div>
+    </div>
 
-
-        <div class="form-group">
-            <input type="submit" value="Login" class="btn btn-default" />
-        </div>
-    </form>
-
-    <a href="@Url.Action("Index","Account")">У вас еще нет аккаунта?</a>
-
-</div>
+</main>
 
 

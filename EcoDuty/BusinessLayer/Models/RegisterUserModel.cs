@@ -15,9 +15,9 @@ namespace BusinessLayer.Models
         [RegularExpression(@"^\s*[A-ZА-Я][a-zа-я]+('[a-zа-я]+|-[A-ZА-Я][a-zа-я]+)?\s*$", ErrorMessage = "Фамилия указана неверно")]
         public string Surname { get; set; }
 
-        [Required(ErrorMessage = "Не указано отчество пользователя")]
-        [RegularExpression(@"^\s*[A-ZА-Я][a-zа-я]+('[a-zа-я]+|-[A-ZА-Я][a-zа-я]+)?\s*$", ErrorMessage = "Отчество указано неверно")]
-        public string Patronymic { get; set; }
+        
+        //[RegularExpression(@"^\s*[A-ZА-Я][a-zа-я]+('[a-zа-я]+|-[A-ZА-Я][a-zа-я]+)?\s*$", ErrorMessage = "Отчество указано неверно")]
+        //public string Patronymic { get; set; }
 
         [Required(ErrorMessage = "Не указан номер паспорта")]
         [RegularExpression(@"(^[А-ГҐДЕЄЖЗИІЇЙК-Я]{2}\d{6}$)|(^\d{9}$)", ErrorMessage = "Некорректный номер паспорта")]

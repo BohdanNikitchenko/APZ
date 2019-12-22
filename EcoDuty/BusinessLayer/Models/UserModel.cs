@@ -13,7 +13,7 @@ namespace BusinessLayer.Models
             Id = user.Id;
             Name = user.Name;
             Surname = user.Surname;
-            Patronymic = user.Patronymic;
+            //Patronymic = user.Patronymic;
             Passport = user.Passport;
             TaxIdentity = user.TaxIdentity;
             CityId = user.CityId;
@@ -31,7 +31,7 @@ namespace BusinessLayer.Models
         public string Surname { get; set; }
 
         
-        public string Patronymic { get; set; }
+        //public string Patronymic { get; set; }
 
         [Required(ErrorMessage = "Не указан номер паспорта")]
         [RegularExpression(@"(^[А-ГҐДЕЄЖЗИІЇЙК-Я]{2}\d{6}$)|(^\d{9}$)", ErrorMessage = "Некорректный номер паспорта")]

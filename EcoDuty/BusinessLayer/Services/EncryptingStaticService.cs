@@ -56,7 +56,7 @@ namespace BusinessLayer.Services
                 Email = Encrypt(user.Email, password),
                 Name = Encrypt(user.Name, password),
                 Surname = Encrypt(user.Surname, password),
-                Patronymic = Encrypt(user.Patronymic, password),
+                //Patronymic = Encrypt(user.Patronymic, password),
                 TaxIdentity = Encrypt(user.TaxIdentity, password),
             };
             return user1;

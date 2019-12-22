@@ -28,7 +28,7 @@ namespace BusinessLayer.Services
             City city = dataManager.CitiesRepository.GetItemByName(u.City);
             user.Name = EncryptingStaticService.Encrypt(u.Name, user.Password);
             user.Surname = EncryptingStaticService.Encrypt(u.Surname, user.Password);
-            user.Patronymic = EncryptingStaticService.Encrypt(u.Patronymic, user.Password);
+            //user.Patronymic = EncryptingStaticService.Encrypt(u.Patronymic, user.Password);
             user.Passport = u.Passport;
             user.CityId = city.Id;
             user.TaxIdentity = EncryptingStaticService.Encrypt(u.TaxIdentity, user.Password);
@@ -62,19 +62,27 @@ namespace BusinessLayer.Services
         public User FindUserByPassport(string name)
         {
             User user = dataManager.UsersRepository.FindUserByPassport(name);
-
-            return EncryptingStaticService.Decrypt(user, user.Password);
+            if(user != null)
+            {
+                return EncryptingStaticService.Decrypt(user, user.Password);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public User IsRegistrated(string passport, string password)
         {
             //var obj = dataManager.UsersRepository.FindUserByPassport(passport);
-            var obj = FindUserByPassport(passport);
-            if (HashStaticService.VerifyHashedPassword(obj.Password, password))
+            User obj = FindUserByPassport(passport);
+            if(obj != null)
             {
-                return obj;
+                if (HashStaticService.VerifyHashedPassword(obj.Password, password))
+                {
+                    return obj;
+                }
             }
-
             return null;
         }
 

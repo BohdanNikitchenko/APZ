@@ -2,9 +2,141 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    
+body{
+    margin: 0;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    background-color: #f5f8fa;
+}
 
+.navbar-laravel
+{
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+
+.navbar-brand , .nav-link, .my-form, .login-form
+{
+    font-family: Raleway, sans-serif;
+}
+
+.my-form
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.my-form .row
+{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.login-form
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.login-form .row
+{
+    margin-left: 0;
+    margin-right: 0;
+}
+</style>
 <h1>Regestration</h1>
-<div class="row">
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Register</div>
+                    <div class="card-body">
+                        <form asp-action="Index">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group row">
+                                <label asp-for="Surname" class="col-md-4 col-form-label text-md-right">Surname*</label>
+                                <div class="col-md-6">
+                                    <input asp-for="Surname" class="form-control" />
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Name" class="col-md-4 col-form-label text-md-right">Name*</label>
+                                <div class="col-md-6">
+                                    <input asp-for="Name" class="form-control" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                            @*<div class="form-group row">
+                                <label asp-for="Patronymic" class="col-md-4 col-form-label text-md-right">Patonymic</label>
+                                <div class="col-md-6">
+                                    <input asp-for="Patronymic" class="form-control" />
+                                    <span asp-validation-for="Patronymic" class="text-danger"></span>
+                                </div>
+                            </div>*@
+                            <div class="form-group row">
+                                <label asp-for="Passport" class="col-md-4 col-form-label text-md-right">Passport number*</label>
+                                <div class="col-md-6">
+                                    <input asp-for="Passport" class="form-control" />
+                                    <span asp-validation-for="Passport" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="TaxIdentity" class="col-md-4 col-form-label text-md-right">Tax identity number*</label>
+                                <div class="col-md-6">
+                                    <input asp-for="TaxIdentity" class="form-control" />
+                                    <span asp-validation-for="TaxIdentity" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="City" class="col-md-4 col-form-label text-md-right">Город: </label>
+                                <div class="col-md-6">
+                                    <select asp-for="City" class="form-control input__item" asp-items="@new SelectList(Model.Cities)"></select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Email" class="col-md-4 col-form-label text-md-right">Email*</label>
+                                <div class="col-md-6">
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Password" class="col-md-4 col-form-label text-md-right"></label>
+                                <div class="col-md-6">
+                                    <input asp-for="Password" class="form-control" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="ConfirmPassword" class="col-md-4 col-form-label text-md-right"></label>
+                                <div class="col-md-6">
+                                    <input asp-for="ConfirmPassword" class="form-control" />
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Register
+                                </button>
+                                <a href="@Url.Action("Login","Account")" class="btn btn-link">
+                                    Есть аккаунт? - вход
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+@*<div class="row">
     <div class="col-md-4">
         <form asp-action="Index">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -67,4 +199,4 @@
 
 <div>
     <a href="@Url.Action("Login","Account")">Есть аккаунт? - вход</a>
-</div>
+</div>*@
