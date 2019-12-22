@@ -154,7 +154,8 @@ namespace EcoDuty.Controllers
         [HttpGet]
         public IActionResult AddSensorTypePage()
         {
-            return View();
+            SensorTypeModel sensorTypeModel = new SensorTypeModel();
+            return View(sensorTypeModel);
         }
 
         [HttpPost]
@@ -231,7 +232,7 @@ namespace EcoDuty.Controllers
         public IActionResult CityRemove(int id)
         {
             servicesmanager.Admin.RemoveCityById(id);
-            return RedirectToAction("ViewAllSensorType");
+            return RedirectToAction("ViewAllCitiesType");
         }
 
 
@@ -240,6 +241,17 @@ namespace EcoDuty.Controllers
         {
             UserModel model = servicesmanager.Admin.GetUserModelById(id);
             return View(model);
+        }
+
+        public IActionResult UserRemove(int id)
+        {
+
+            bool res = servicesmanager.Admin.RemoveUserById(id, User.Identity.Name);
+            if (res)
+            {
+                return RedirectToAction("Logout", "Account");
+            }
+            return RedirectToAction("ViewAllUser");
         }
 
         public IActionResult ChangeUserRole(int id)

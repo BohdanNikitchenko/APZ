@@ -152,7 +152,7 @@ namespace BusinessLayer.Services
             Technic technic = new Technic();
             User user = FindUserByPassport(name);
             TechnicType technicType = dataManager.TechnicTypesRepository.GetItem(Convert.ToInt32(model.TechnicTypeId));
-            if (user != null && technicType != null && dataManager.TechnicsRepository.FindTechnicByUser_AutoNumber(user.Id, model.AutoNumber) == null)
+            if (user != null && technicType != null && dataManager.TechnicsRepository.FindTechnicByUser_AutoNumber(model.AutoNumber) == null)
             {
                 //technic.User = user;
                 technic.UserId = user.Id;
@@ -165,6 +165,15 @@ namespace BusinessLayer.Services
                 dataManager.TechnicsRepository.Create(technic);
                 //place = dataManager.PlacesRepository.FindPlaceByUser_Address(user.Id, model.Address);
             }
+        }
+
+        public bool UniqueNumber(string autoNumber)
+        {
+            if(dataManager.TechnicsRepository.FindTechnicByUser_AutoNumber(autoNumber) == null)
+            {
+                return true;
+            }
+            return false;
         }
 
         private int AutosCharactersFine(DateTime yearOfCarManufacture, int engineVolume)
@@ -180,6 +189,15 @@ namespace BusinessLayer.Services
                 fine += engineVolume / 100;
             }
             return fine;
+        }
+
+        public bool UniqueSensorNumber(string serialNumber)
+        {
+            if(dataManager.SensorsRepository.GetSensorBySerialNumber(serialNumber) == null)
+            {
+                return true;
+            }
+            return false;
         }
 
         public Technic GetTechnicById(int id)
@@ -223,6 +241,33 @@ namespace BusinessLayer.Services
                 dataManager.SensorsRepository.Create(sensor);
                 //place = dataManager.PlacesRepository.FindPlaceByUser_Address(user.Id, model.Address);
             }
+        }
+
+        public void ChangeUserData(UserChangeModel u)
+        {
+            User user = dataManager.UsersRepository.GetItem(u.Id);
+            
+            City city = dataManager.CitiesRepository.GetItemByName(u.City);
+            user.Name = EncryptingStaticService.Encrypt(u.Name, user.Password);
+            user.Surname = EncryptingStaticService.Encrypt(u.Surname, user.Password);
+            user.CityId = city.Id;
+            user.City = city;
+            user.Email = EncryptingStaticService.Encrypt(u.Email, user.Password);
+            dataManager.UsersRepository.Update(user);
+        }
+
+        public UserChangeModel GetChangeUserModel(string name)
+        {
+            User user = FindUserByPassport(name);
+            UserChangeModel model = new UserChangeModel()
+            {
+                Id = user.Id,
+                Name = user.Name,
+                Surname = user.Surname,
+                City = user.City.Name,
+                Email = user.Email
+            };
+            return model;
         }
 
         public IEnumerable<Fine> GetAllFines(string name)

@@ -54,10 +54,10 @@ namespace DAL.Implementations
             context.SaveChanges();
         }
 
-        public object FindTechnicByUser_AutoNumber(int id, string autoNumber)
+        public object FindTechnicByUser_AutoNumber(string autoNumber)
         {
             return context.Set<Technic>()
-            .FirstOrDefault(x => x.UserId == id && x.AutoNumber == autoNumber);
+            .FirstOrDefault(x => x.AutoNumber == autoNumber);
         }
     }
 }

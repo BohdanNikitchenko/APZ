@@ -216,6 +216,22 @@ namespace BusinessLayer.Services
             dataManager.CitiesRepository.Update(city);
         }
 
+        public bool RemoveUserById(int id, string name)
+        {
+            bool res;
+            User user = dataManager.UsersRepository.GetItem(id);
+            if(user.Passport == name)
+            {
+                res = true;
+            }
+            else
+            {
+                res = false;
+            }
+            dataManager.UsersRepository.Delete(id);
+            return res;
+        }
+
         public void ChangeUserRole(int id)
         {
             User user = dataManager.UsersRepository.GetItem(id);

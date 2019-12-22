@@ -9,7 +9,7 @@
 {
     <div>
         <a href='@Url.Action("UserPage","Admin", new{id = user.Id})' class="link__dish">@user.Passport @user.Surname @user.Name @user.Patronymic @user.Role</a>
-        @*<a href='@Url.Action("PlaceTypeRemove","Admin",new{id = placeType.Id})' class="link__dish">Delete</a>*@
+        <a href='@Url.Action("UserRemove","Admin",new{id = user.Id})' class="link__dish">Delete</a>
     </div>
 }
 

@@ -30,9 +30,6 @@ namespace DataLayer
             builder.Entity<Technic>()
                 .HasIndex(u => u.AutoNumber)
                 .IsUnique();
-            builder.Entity<Place>()
-               .HasIndex(u => u.Address)
-               .IsUnique();
         }
     }
 

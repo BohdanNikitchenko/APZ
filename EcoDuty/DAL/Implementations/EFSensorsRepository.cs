@@ -59,7 +59,7 @@ namespace DAL.Implementations
         public object FindSensorByUser_SerialNumber(int id, string serialNumber)
         {
             return context.Set<Sensor>()
-            .FirstOrDefault(x => x.UserId == id && x.SerialNumber == serialNumber);
+            .FirstOrDefault(x => x.SerialNumber == serialNumber);
         }
 
         public Sensor GetSensorBySerialNumber(string serialNumber)

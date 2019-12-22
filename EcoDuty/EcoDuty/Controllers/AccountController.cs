@@ -46,7 +46,7 @@ namespace EcoDuty.Controllers
                     return RedirectToAction("Account");
                 }
                 else
-                    ModelState.AddModelError("", "Некорректные паспортные данные");
+                    ModelState.AddModelError("Passport", "Некорректные паспортные данные");
             }
             else
             {
@@ -98,7 +98,7 @@ namespace EcoDuty.Controllers
 
                     return RedirectToAction("Account", "Account");
                 }
-                ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+                ModelState.AddModelError("General", "Некорректные логин и(или) пароль");
             }
             return View(model);
         }
@@ -147,8 +147,9 @@ namespace EcoDuty.Controllers
             if (ModelState.IsValid)
             {
                 servicesmanager.Users.AddPlace(model, User.Identity.Name);
+                return RedirectToAction("ViewAllPlace");
             }
-            return RedirectToAction("ViewAllPlace");
+            return AddPlacePage();
             //return ViewAllPlace();
         }
 
@@ -180,9 +181,15 @@ namespace EcoDuty.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (!servicesmanager.Users.UniqueNumber(model.AutoNumber))
+                {
+                    ModelState.AddModelError("AutoNumber", "ошибка уникальности");
+                    return AddTechnicPage();
+                }
                 servicesmanager.Users.AddTechnic(model, User.Identity.Name);
+                return RedirectToAction("ViewAllTechnic");
             }
-            return RedirectToAction("ViewAllTechnic");
+            return AddTechnicPage();
             //return ViewAllPlace();
         }
 
@@ -213,9 +220,15 @@ namespace EcoDuty.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (!servicesmanager.Users.UniqueSensorNumber(model.SerialNumber))
+                {
+                    ModelState.AddModelError("SerialNumber", "ошибка уникальности");
+                    return AddSensorPage();
+                }
                 servicesmanager.Users.AddSensor(model, User.Identity.Name);
+                return RedirectToAction("ViewAllSensor");
             }
-            return RedirectToAction("ViewAllSensor");
+            return AddSensorPage();
             //return ViewAllPlace();
         }
 
@@ -258,6 +271,28 @@ namespace EcoDuty.Controllers
         {
             IEnumerable<Fine> fines = servicesmanager.Users.GetAllFines(name);
             return View(fines);
+        }
+
+
+        [HttpGet]
+        public IActionResult ChangeUserData()
+        {
+            UserChangeModel model = servicesmanager.Users.GetChangeUserModel(User.Identity.Name);
+            IEnumerable<string> cities = servicesmanager.Users.GetNumerableCitiesName();
+            model.Cities = cities;
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult ChangeUserData(UserChangeModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                servicesmanager.Users.ChangeUserData(model);
+                return RedirectToAction("Account");
+            }
+            return ChangeUserData();
+            //return ViewAllPlace();
         }
 
     }

@@ -18,10 +18,14 @@
 
 
     <label asp-for="ResType" class="control-label name__input"></label>
-    <div class="valid">
-        <input asp-for="ResType" class="form-control  input__item" />
-        <span asp-validation-for="ResType" class="text-danger exit__errore field-validation-error"></span>
-    </div>
+    @*<div class="valid">
+            <input asp-for="ResType" class="form-control  input__item" />
+            <select asp-for="ResType" class="form-control input__item" asp-items="@new SelectList(Model.ResTypeList)"></select>
+            <span asp-validation-for="ResType" class="text-danger exit__errore field-validation-error"></span>
+        </div>*@
+<div class="valid">
+    <select asp-for="ResType" class="form-control input__item" asp-items="@new SelectList(Model.ResTypeList)"></select>
+</div>
 
     <label asp-for="NormalString" class="control-label name__input"></label>
     <div class="valid">
