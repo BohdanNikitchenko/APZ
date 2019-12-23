@@ -7,6 +7,5 @@ namespace DAL.Interfaces
 {
     public interface IPlaceTypeRepository : IRepository<PlaceType>
     {
-        object GetSelectList();
     }
 }
