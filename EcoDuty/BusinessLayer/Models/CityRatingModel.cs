@@ -10,5 +10,6 @@ namespace BusinessLayer.Models
         public string Name { get; set; }
         public string Country { get; set; }
         public int SumFines { get; set; }
+        public string Shape { get; set; }
     }
 }

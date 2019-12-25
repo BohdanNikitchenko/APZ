@@ -117,7 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Rating" xml:space="preserve">
-    <value>Рейтинг</value>
+  <data name="Amount of penalty points" xml:space="preserve">
+    <value>Количество штрафных баллов</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Город</value>
+  </data>
+  <data name="City Rating" xml:space="preserve">
+    <value>Рейтинг городов</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Страна</value>
   </data>
 </root>
