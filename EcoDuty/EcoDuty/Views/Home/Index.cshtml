@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<CityRatingModel>
+@{
     ViewData["Title"] = "Home Page";
 }
 <br />
@@ -6,7 +7,8 @@
 <br />
 <br />
 
-<h1>Rating Cities</h1>
+@*<h1>Rating Cities</h1>*@
+<h1>@Localizer["Rating"]</h1>
 
 @foreach(var city in Model)
 {

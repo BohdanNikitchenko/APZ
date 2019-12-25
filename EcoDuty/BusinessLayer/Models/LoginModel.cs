@@ -7,11 +7,13 @@ namespace BusinessLayer.Models
 {
     public class LoginModel
     {
-        [Required(ErrorMessage = "Не указан номер паспорта")]
+        [Required(ErrorMessage = "PassportRequired")]
+        [Display(Name = "Passport")]
         public string Passport { get; set; }
 
-        [Required(ErrorMessage = "Не указан пароль")]
+        [Required(ErrorMessage = "PasswordError")]
         [DataType(DataType.Password)]
+        [Display(Name = "Password")]
         public string Password { get; set; }
         public string General { get; set; }
     }

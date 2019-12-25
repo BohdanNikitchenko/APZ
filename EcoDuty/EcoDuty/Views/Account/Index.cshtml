@@ -59,48 +59,41 @@ body{
                         <form asp-action="Index">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group row">
-                                <label asp-for="Surname" class="col-md-4 col-form-label text-md-right">Surname*</label>
+                                <label asp-for="Surname" class="col-md-4 col-form-label text-md-right"></label>
                                 <div class="col-md-6">
                                     <input asp-for="Surname" class="form-control" />
                                     <span asp-validation-for="Surname" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label asp-for="Name" class="col-md-4 col-form-label text-md-right">Name*</label>
+                                <label asp-for="Name" class="col-md-4 col-form-label text-md-right"></label>
                                 <div class="col-md-6">
                                     <input asp-for="Name" class="form-control" />
                                     <span asp-validation-for="Name" class="text-danger"></span>
                                 </div>
                             </div>
-                            @*<div class="form-group row">
-                                <label asp-for="Patronymic" class="col-md-4 col-form-label text-md-right">Patonymic</label>
-                                <div class="col-md-6">
-                                    <input asp-for="Patronymic" class="form-control" />
-                                    <span asp-validation-for="Patronymic" class="text-danger"></span>
-                                </div>
-                            </div>*@
                             <div class="form-group row">
-                                <label asp-for="Passport" class="col-md-4 col-form-label text-md-right">Passport number*</label>
+                                <label asp-for="Passport" class="col-md-4 col-form-label text-md-right"></label>
                                 <div class="col-md-6">
                                     <input asp-for="Passport" class="form-control" />
                                     <span asp-validation-for="Passport" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label asp-for="TaxIdentity" class="col-md-4 col-form-label text-md-right">Tax identity number*</label>
+                                <label asp-for="TaxIdentity" class="col-md-4 col-form-label text-md-right"></label>
                                 <div class="col-md-6">
                                     <input asp-for="TaxIdentity" class="form-control" />
                                     <span asp-validation-for="TaxIdentity" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label asp-for="City" class="col-md-4 col-form-label text-md-right">Город: </label>
+                                <label asp-for="City" class="col-md-4 col-form-label text-md-right"></label>
                                 <div class="col-md-6">
                                     <select asp-for="City" class="form-control input__item" asp-items="@new SelectList(Model.Cities)"></select>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label asp-for="Email" class="col-md-4 col-form-label text-md-right">Email*</label>
+                                <label asp-for="Email" class="col-md-4 col-form-label text-md-right"></label>
                                 <div class="col-md-6">
                                     <input asp-for="Email" class="form-control" />
                                     <span asp-validation-for="Email" class="text-danger"></span>
@@ -125,7 +118,7 @@ body{
                                     Register
                                 </button>
                                 <a href="@Url.Action("Login","Account")" class="btn btn-link">
-                                    Есть аккаунт? - вход
+                                    @Localizer["Have an account? - entrance"]
                                 </a>
                             </div>
                         </form>

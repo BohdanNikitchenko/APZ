@@ -1,0 +1,9 @@
+D:\Github\APZ\EcoDuty\DataLayer\bin\Release\netcoreapp3.0\DataLayer.deps.json
+D:\Github\APZ\EcoDuty\DataLayer\bin\Release\netcoreapp3.0\DataLayer.runtimeconfig.json
+D:\Github\APZ\EcoDuty\DataLayer\bin\Release\netcoreapp3.0\DataLayer.runtimeconfig.dev.json
+D:\Github\APZ\EcoDuty\DataLayer\bin\Release\netcoreapp3.0\DataLayer.dll
+D:\Github\APZ\EcoDuty\DataLayer\bin\Release\netcoreapp3.0\DataLayer.pdb
+D:\Github\APZ\EcoDuty\DataLayer\obj\Release\netcoreapp3.0\DataLayer.AssemblyInfoInputs.cache
+D:\Github\APZ\EcoDuty\DataLayer\obj\Release\netcoreapp3.0\DataLayer.AssemblyInfo.cs
+D:\Github\APZ\EcoDuty\DataLayer\obj\Release\netcoreapp3.0\DataLayer.dll
+D:\Github\APZ\EcoDuty\DataLayer\obj\Release\netcoreapp3.0\DataLayer.pdb

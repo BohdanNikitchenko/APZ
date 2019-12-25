@@ -307,6 +307,17 @@
         "runtime": {
           "EcoDuty.dll": {}
         },
+        "resources": {
+          "en/EcoDuty.resources.dll": {
+            "locale": "en"
+          },
+          "ru/EcoDuty.resources.dll": {
+            "locale": "ru"
+          },
+          "uk/EcoDuty.resources.dll": {
+            "locale": "uk"
+          }
+        },
         "compile": {
           "EcoDuty.dll": {}
         }

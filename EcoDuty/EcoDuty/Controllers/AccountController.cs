@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 
 namespace EcoDuty.Controllers
 {
@@ -19,11 +20,13 @@ namespace EcoDuty.Controllers
     {
         private DataManager datamanager;
         private ServiceManager servicesmanager;
+        private readonly IStringLocalizer<AccountController> _localizer;
 
-        public AccountController(DataManager dataManager)
+        public AccountController(DataManager dataManager, IStringLocalizer<AccountController> localizer)
         {
             datamanager = dataManager;
             servicesmanager = new ServiceManager(dataManager);
+            _localizer = localizer;
         }
         [HttpGet]
         public IActionResult Index()
@@ -46,11 +49,11 @@ namespace EcoDuty.Controllers
                     return RedirectToAction("Account");
                 }
                 else
-                    ModelState.AddModelError("Passport", "Некорректные паспортные данные");
+                    ModelState.AddModelError("Passport", _localizer["UserRegisterUnique"]);
             }
             else
             {
-                ModelState.AddModelError("Password", "Пароли не совпадают");
+                ModelState.AddModelError("Password", _localizer["PasswordsRegisterError"]);
             }
 
             return Index();
@@ -98,7 +101,8 @@ namespace EcoDuty.Controllers
 
                     return RedirectToAction("Account", "Account");
                 }
-                ModelState.AddModelError("General", "Некорректные логин и(или) пароль");
+                ModelState.AddModelError("General", _localizer["IncorrectLoginGeneral"]);
+                //Некорректные логин и(или) пароль
             }
             return View(model);
         }

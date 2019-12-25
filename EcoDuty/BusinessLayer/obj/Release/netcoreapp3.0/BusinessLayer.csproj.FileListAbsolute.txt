@@ -1,0 +1,13 @@
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Release\netcoreapp3.0\BusinessLayer.deps.json
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Release\netcoreapp3.0\BusinessLayer.dll
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Release\netcoreapp3.0\BusinessLayer.pdb
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Release\netcoreapp3.0\DAL.dll
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Release\netcoreapp3.0\DataLayer.dll
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Release\netcoreapp3.0\DAL.pdb
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Release\netcoreapp3.0\DataLayer.pdb
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Release\netcoreapp3.0\BusinessLayer.csprojAssemblyReference.cache
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Release\netcoreapp3.0\BusinessLayer.AssemblyInfoInputs.cache
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Release\netcoreapp3.0\BusinessLayer.AssemblyInfo.cs
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Release\netcoreapp3.0\BusinessLayer.csproj.CopyComplete
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Release\netcoreapp3.0\BusinessLayer.dll
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Release\netcoreapp3.0\BusinessLayer.pdb

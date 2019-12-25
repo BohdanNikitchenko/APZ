@@ -7,41 +7,49 @@ namespace BusinessLayer.Models
 {
     public class RegisterUserModel
     {
-        [Required(ErrorMessage = "Не указано имя пользователя")]
-        [RegularExpression(@"^\s*[A-ZА-Я][a-zа-я]+('[a-zа-я]+|-[A-ZА-Я][a-zа-я]+)?\s*$", ErrorMessage = "Имя указано неверно")]
+        [Required(ErrorMessage = "NameRequired")]
+        [RegularExpression(@"^\s*[A-ZА-Я][a-zа-я]+('[a-zа-я]+|-[A-ZА-Я][a-zа-я]+)?\s*$", ErrorMessage = "NameError")]
+        [Display(Name = "Name")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Не указана фамилия пользователя")]
-        [RegularExpression(@"^\s*[A-ZА-Я][a-zа-я]+('[a-zа-я]+|-[A-ZА-Я][a-zа-я]+)?\s*$", ErrorMessage = "Фамилия указана неверно")]
+        [Required(ErrorMessage = "SurnameRequired")]
+        [RegularExpression(@"^\s*[A-ZА-Я][a-zа-я]+('[a-zа-я]+|-[A-ZА-Я][a-zа-я]+)?\s*$", ErrorMessage = "SurnameError")]
+        [Display(Name = "Surname")]
         public string Surname { get; set; }
 
         
         //[RegularExpression(@"^\s*[A-ZА-Я][a-zа-я]+('[a-zа-я]+|-[A-ZА-Я][a-zа-я]+)?\s*$", ErrorMessage = "Отчество указано неверно")]
         //public string Patronymic { get; set; }
 
-        [Required(ErrorMessage = "Не указан номер паспорта")]
-        [RegularExpression(@"(^[А-ГҐДЕЄЖЗИІЇЙК-Я]{2}\d{6}$)|(^\d{9}$)", ErrorMessage = "Некорректный номер паспорта")]
+        [Required(ErrorMessage = "PassportRequired")]
+        [RegularExpression(@"(^[А-ГҐДЕЄЖЗИІЇЙК-Я]{2}\d{6}$)|(^\d{9}$)", ErrorMessage = "PassportError")]
+        [Display(Name = "Passport")]
         public string Passport { get; set; }
 
 
-        [Required(ErrorMessage = "Не указан номер ИНН")]
-        [RegularExpression(@"\d{10}", ErrorMessage = "Некорректный номер ИНН")]
+        [Required(ErrorMessage = "TaxIdentRequiered")]
+        [RegularExpression(@"\d{10}", ErrorMessage = "TaxIdentError")]
+        [Display(Name = "TaxIdentity")]
         public string TaxIdentity { get; set; }
+        [Display(Name = "City")]
         public string City { get; set; }
 
-        [Required(ErrorMessage = "Не указан пароль")]
-        [StringLength(30, MinimumLength = 6, ErrorMessage = "Пароль должен быть от 6 до 30 символов")]
+        [Required(ErrorMessage = "PasswordRequired")]
+        [StringLength(30, MinimumLength = 6, ErrorMessage = "PasswordError")]
         [DataType(DataType.Password)]
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "Пароль введен неверно")]
+        [Compare("Password", ErrorMessage = "ConfirmPasswordError")]
+        [Display(Name = "ConfirmPassword")]
         public string ConfirmPassword { get; set; }
 
 
-        [EmailAddress(ErrorMessage = "Некорректный адрес")]
-        [Required(ErrorMessage = "Не указан Email")]
-        [RegularExpression(@"^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$", ErrorMessage = "Некорректный адрес")]
+        [EmailAddress(ErrorMessage = "EmailError")]
+        [Required(ErrorMessage = "EmailRequired")]
+        [RegularExpression(@"^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$", ErrorMessage = "EmailError")]
+        [Display(Name = "Email")]
         public string Email { get; set; }
         public IEnumerable<string> Cities { get; set; }
 

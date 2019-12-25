@@ -62,14 +62,14 @@ body{
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <span asp-validation-for="General" class="text-danger"></span>
                             <div class="form-group row" >
-                                <label asp-for="Passport" class="col-md-4 col-form-label text-md-right">Passport number</label>
+                                <label asp-for="Passport" class="col-md-4 col-form-label text-md-right"></label>
                                 <div class="col-md-6">
                                     <input asp-for="Passport" class="form-control" />
                                     <span asp-validation-for="Passport" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label asp-for="Password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <label asp-for="Password" class="col-md-4 col-form-label text-md-right"></label>
                                 <div class="col-md-6">
                                     <input asp-for="Password" class="form-control" />
                                     <span asp-validation-for="Password" class="text-danger"></span>
@@ -80,7 +80,7 @@ body{
                                     Login
                                 </button>
                                 <a href="@Url.Action("Index","Account")" class="btn btn-link">
-                                У вас еще нет аккаунта?
+                                    @Localizer["Don't have an account yet?"]
                                 </a>
                             </div>
                         </form>
