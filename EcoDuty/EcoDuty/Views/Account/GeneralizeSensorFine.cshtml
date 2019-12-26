@@ -2,18 +2,74 @@
 @{
     ViewData["Title"] = "GeneralizeSensorFine";
 }
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 
 <h1>GeneralizeSensorFine</h1>
-@foreach (var fine in Model)
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col col-xs-6">
+                                    <h3 class="panel-title">@Localizer["SensorsFine"]</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-bordered table-list">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20%"><em class="fa fa-cog"></em></th>
+                                        <th>@SharedLocalizer["Description"]</th>
+                                        <th>Date</th>
+                                        <th>@SharedLocalizer["SizeFine"]</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        foreach (var fine in Model)
+                                        {
+                                            <tr>
+                                                <td align="center">
+                                                    <a href='@Url.Action("SensorPage","Account", new{id = fine.SensorId})' class="btn btn-default"><em class="fa fa-info fa-2x"></em></a>
+                                                </td>
+                                                <td>@fine.Description</td>
+                                                <td>@fine.DateTime.Date.Date</td>
+                                                <td>@fine.SizeFine</td>
+                                            </tr>
+                                        }
+                                    }
+
+                                </tbody>
+                            </table>
+                            <div>
+                                <a href="@Url.Action("Account","Account")">@SharedLocalizer["Back"]</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+@*@foreach (var fine in Model)
 {
 
     <div>
         <br />
-        <a href='@Url.Action("SensorPage","Account", new{id = fine.SensorId})' class="link__dish"> 
+        <a href='@Url.Action("SensorPage","Account", new{id = fine.SensorId})' class="link__dish">
             <p>@fine.Description</p>
             <p>Количество штрафных баллов @fine.SizeFine</p>
         </a>
         <br />
     </div>
 
-}
+}*@

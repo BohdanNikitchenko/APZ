@@ -89,14 +89,21 @@ namespace BusinessLayer.Services
         public IEnumerable<Place> GetAllPlaces(string name)
         {
             User user = FindUserByPassport(name);
-
-            return dataManager.PlacesRepository.GetList().Where(x => x.UserId == user.Id);
+            if(user != null)
+            {
+                return dataManager.PlacesRepository.GetList().Where(x => x.UserId == user.Id);
+            }
+            return null;
         }
 
         public IEnumerable<Technic> GetAllTechnics(string name)
         {
             User user = FindUserByPassport(name);
-            return dataManager.TechnicsRepository.GetList().Where(x => x.UserId == user.Id);
+            if(user != null)
+            {
+                return dataManager.TechnicsRepository.GetList().Where(x => x.UserId == user.Id);
+            }
+            return null;
         }
 
        
@@ -152,7 +159,11 @@ namespace BusinessLayer.Services
         public IEnumerable<Sensor> GetAllSensors(string name)
         {
             User user = FindUserByPassport(name);
-            return dataManager.SensorsRepository.GetList().Where(x => x.UserId == user.Id);
+            if(user != null)
+            {
+                return dataManager.SensorsRepository.GetList().Where(x => x.UserId == user.Id);
+            }
+            return null;
         }
 
         public void AddTechnic(AddTechnicModel model, string name)
@@ -281,7 +292,11 @@ namespace BusinessLayer.Services
         public IEnumerable<Fine> GetAllFines(string name)
         {
             User user = FindUserByPassport(name);
-            return dataManager.FinesRepository.GetList().Where(x => x.Sensor.UserId == user.Id);
+            if(user != null)
+            {
+                return dataManager.FinesRepository.GetList().Where(x => x.Sensor.UserId == user.Id);
+            }
+            return null;
         }
 
         public void RemoveSensorById(int id, string name)

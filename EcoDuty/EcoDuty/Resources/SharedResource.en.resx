@@ -159,7 +159,7 @@
   <data name="CurrentRate" xml:space="preserve">
     <value>Current Rate</value>
   </data>
-  <data name="Descriotion" xml:space="preserve">
+  <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>
   <data name="EcoStandart" xml:space="preserve">
@@ -234,6 +234,12 @@
   <data name="PasswordRequired" xml:space="preserve">
     <value>Password not specified</value>
   </data>
+  <data name="PlaceNull" xml:space="preserve">
+    <value>Place was deleted</value>
+  </data>
+  <data name="PlacesFine" xml:space="preserve">
+    <value>All Places Fines</value>
+  </data>
   <data name="PlaceType" xml:space="preserve">
     <value>Place type</value>
   </data>
@@ -245,6 +251,9 @@
   </data>
   <data name="Sensors" xml:space="preserve">
     <value>Sensors</value>
+  </data>
+  <data name="SensorsFine" xml:space="preserve">
+    <value>All Sensors Fines(IoT)</value>
   </data>
   <data name="SensorType" xml:space="preserve">
     <value>Type of sensor</value>
@@ -288,8 +297,14 @@
   <data name="TechnicData" xml:space="preserve">
     <value>Year of technic manufacturers</value>
   </data>
+  <data name="TechnicNull" xml:space="preserve">
+    <value>Technic was deleted</value>
+  </data>
   <data name="Technics" xml:space="preserve">
     <value>Technics</value>
+  </data>
+  <data name="TechnicsFine" xml:space="preserve">
+    <value>All Technics Fines</value>
   </data>
   <data name="TechnicType" xml:space="preserve">
     <value>Type of technic</value>
