@@ -2,21 +2,61 @@
 @{
     ViewData["Title"] = "ViewAllPlace";
 }
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 <h1>ViewAllPlace</h1>
 
-<br />
-<a href='@Url.Action("AddPlacePage","Account")' class="back__list">Add Place</a>
-<br />
-@foreach (var place in Model)
-{
-    if (place.Address != null)
-    {
-        <div>
-            <a href='@Url.Action("PlacePage","Account", new{id = place.Id})' class="link__dish">@place.Address</a>
-            <a href='@Url.Action("PlaceRemove","Account",new{id = place.Id})' class="link__dish">Delete</a>
-        </div>
-    }
-}
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col col-xs-6">
+                                    <h3 class="panel-title">@Localizer["Places"]</h3>
+                                </div>
+                                <div class="col col-xs-6 text-right">
+                                    <button type="button" class="btn btn-sm btn-primary btn-create"
+                                            onclick="location.href='@Url.Action("AddPlacePage","Account")'">
+                                        @Localizer["Create New"]
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-bordered table-list">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20%"><em class="fa fa-cog"></em></th>
+                                        <th>@SharedLocalizer["Address"]</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var place in Model)
+                                    {
+                                        if (place.Address != null)
+                                        {
+                                            <tr>
+                                                <td align="center">
+                                                    <a href='@Url.Action("PlacePage","Account", new{id = place.Id})' class="btn btn-default" ><em class="fa fa-info"></em></a>
+                                                    <a href='@Url.Action("PlaceRemove","Account",new{id = place.Id})' class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                                                </td>
+                                                <td>@place.Address</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                            <div>
+                                <a href="@Url.Action("Account","Account")">@SharedLocalizer["Back"]</a>
+                            </div>
+                        </div>
+                    </div>
 
-<a href='@Url.Action("Account","Account")' class="back__list">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

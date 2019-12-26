@@ -200,3 +200,4 @@ D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Ac
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.Index.ru.resources
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.Account.ru.resources
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.ChangeUserData.ru.resources
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.PlacePage.ru.resources

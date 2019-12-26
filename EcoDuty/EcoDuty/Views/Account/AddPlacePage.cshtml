@@ -4,8 +4,47 @@
 }
 
 <h1>AddPlacePage</h1>
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">@Localizer["Add place"]</div>
+                    <div class="card-body">
+                        <form asp-action="AddPlacePage" method="post" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group row">
+                                <label asp-for="Address" class="col-md-4 col-form-label text-md-right"></label>
+                                <div class="col-md-6">
+                                    <input asp-for="Address" class="form-control" />
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="PlaceTypeId" class="col-md-4 col-form-label text-md-right"></label>
+                                <div class="col-md-6">
+                                    <select asp-for="PlaceTypeId" class="form-control input__item" asp-items="@Model.CityList"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    @SharedLocalizer["Save"]
+                                </button>
+                            </div>
+                        </form>
+                        <div>
+                            <a href="@Url.Action("ViewAllPlace","Account")">@SharedLocalizer["Back"]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 
-<form asp-action="AddPlacePage" method="post" enctype="multipart/form-data">
+
+
+@*<form asp-action="AddPlacePage" method="post" enctype="multipart/form-data">
 
 
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -29,4 +68,4 @@
 
 </form>
 
-<a href='@Url.Action("ViewAllPlace","Account")' class="back__list">Back to List</a>
+<a href='@Url.Action("ViewAllPlace","Account")' class="back__list">Back to List</a>*@

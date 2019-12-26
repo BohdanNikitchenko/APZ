@@ -157,11 +157,17 @@ namespace EcoDuty.Controllers
             //return ViewAllPlace();
         }
 
-        [HttpGet]
-        public IActionResult PlacePage(int id)
+        //[HttpGet]
+        //public IActionResult PlacePage(int id)
+        //{
+        //    Place model = servicesmanager.Users.GetPlaceById(id);
+        //    return View(model);
+        //}
+        public ActionResult PlacePage(int id)
         {
             Place model = servicesmanager.Users.GetPlaceById(id);
-            return View(model);
+            return PartialView(model);
+            //return View(model);
         }
 
 
