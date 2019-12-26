@@ -198,3 +198,4 @@ D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Controll
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.Login.en.resources
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.Index.en.resources
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.Index.ru.resources
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.Account.ru.resources
