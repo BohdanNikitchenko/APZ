@@ -249,6 +249,9 @@
   <data name="Sensor" xml:space="preserve">
     <value>Sensor</value>
   </data>
+  <data name="SensorNull" xml:space="preserve">
+    <value>Sensor was deleted</value>
+  </data>
   <data name="Sensors" xml:space="preserve">
     <value>Sensors</value>
   </data>

@@ -2,12 +2,138 @@
 @{
     ViewData["Title"] = "UserPage";
 }
+<br />
+<br />
+<br />
+<br />
 
-<h1>UserPage</h1>
+<div class="container emp-profile">
+    <div class="row">
+        <div class="col-md-4">
+            <input type="button" class="profile-edit-btn" name="btnAddMore" 
+                   value="Change Role"
+                   onclick="location.href='@Url.Action("ChangeUserRole","Admin", new{id = @Model.Id})'">
+        </div>
+        <div class="col-md-6">
+            <div class="profile-head">
+                <h5>
+                    @Model.Surname  @Model.Name
+                </h5>
 
-<p>@Model.Name</p>
+                <h6>
+                    @Model.Role
+                </h6>
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">@Localizer["About"]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">@Localizer["All fines"]</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-work">
+                <p>@Localizer["My property"]:</p>
+                <a href='@Url.Action("ViewAllPlace","Admin", new{name = @Model.Passport})' class="link__dish">@Localizer["Places"]</a>
+                <br />
+                <br />
+                <a href='@Url.Action("ViewAllTechnic","Admin", new{name = @Model.Passport})' class="link__dish">@Localizer["Technics"]</a>
+                <br />
+                <br />
+                <a href='@Url.Action("ViewAllSensor","Admin", new{name = @Model.Passport})' class="link__dish">@Localizer["Sensors"]</a>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="tab-content profile-tab" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>@Localizer["Name"]</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>@Model.Surname  @Model.Name</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>@Localizer["Amount of penalty points"]</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>@Model.SumSizeFine</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>@Localizer["Passport number"]</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>@Model.Passport</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>@Localizer["Email"]</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>@Model.Email</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>@Localizer["Tax Identity"]</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>@Model.TaxIdentity</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>@Localizer["City"]</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>@Model.City.Name</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="m-3">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary btn-lg btn-block"
+                                    onclick="location.href='@Url.Action("GeneralizeTechnicFine","Account", new{name = @Model.Passport})'">
+                                @Localizer["All Technics Fines"]
+                            </button>
+                        </div>
+                    </div>
+                    <div class="m-3">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary btn-lg btn-block"
+                                    onclick="location.href='@Url.Action("GeneralizePlaceFine","Account", new{name = @Model.Passport})'">
+                                @Localizer["All Places Fines"]
+                            </button>
+                        </div>
+                    </div>
+                    <div class="m-3">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary btn-lg btn-block"
+                                    onclick="location.href='@Url.Action("GeneralizeSensorFine","Account", new{name = @Model.Passport})'">
+                                @Localizer["All Sensors Fines(IoT)"]
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@*<p>@Model.Name</p>
 <p>@Model.Surname</p>
-@*<p>@Model.Patronymic</p>*@
+<p>@Model.Patronymic</p>
 <p>@Model.Email</p>
 <p>@Model.Passport</p>
 <p>@Model.TaxIdentity</p>
@@ -32,4 +158,4 @@
 <a href='@Url.Action("ViewAllTechnic","Admin", new{name = @Model.Passport})' class="link__dish">Technics</a>
 <br />
 <br />
-<a href='@Url.Action("ViewAllSensor","Admin", new{name = @Model.Passport})' class="link__dish">Sensors</a>
+<a href='@Url.Action("ViewAllSensor","Admin", new{name = @Model.Passport})' class="link__dish">Sensors</a>*@
