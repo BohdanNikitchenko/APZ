@@ -2,7 +2,59 @@
 @{
     ViewData["Title"] = "PlaceTypePage";    
 }
-    <div>
+    <main class="my-form">
+        <div class="cotainer">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">@Localizer["Place type"]</div>
+                        <div class="card-body">
+                            <form asp-action="PlaceTypePage" method="post" enctype="multipart/form-data">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="number" hidden asp-for="Id" />
+                                <div class="form-group row">
+                                    <label asp-for="HousingType" class="col-md-4 col-form-label text-md-right"></label>
+                                    <div class="col-md-6">
+                                        <input asp-for="HousingType" class="form-control" />
+                                        <span asp-validation-for="HousingType" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label asp-for="EcoType" class="col-md-4 col-form-label text-md-right"></label>
+                                    <div class="col-md-6">
+                                        <input asp-for="EcoType" class="form-control" />
+                                        <span asp-validation-for="EcoType" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label asp-for="SizeFine" class="col-md-4 col-form-label text-md-right"></label>
+                                    <div class="col-md-6">
+                                        <input asp-for="SizeFine" class="form-control" />
+                                        <span asp-validation-for="SizeFine" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                @*<div class="form-group row">
+            <label asp-for="PlaceTypeId" class="col-md-4 col-form-label text-md-right"></label>
+            <div class="col-md-6">
+                <select asp-for="PlaceTypeId" class="form-control input__item" asp-items="@Model.CityList"></select>
+            </div>
+        </div>*@
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        @SharedLocalizer["Save"]
+                                    </button>
+                                </div>
+                            </form>
+                            <div>
+                                <a href="@Url.Action("ViewAllPlaceType","Admin")">@SharedLocalizer["Back"]</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    @*<div>
         <br /><br /><br /><br />
         <form asp-action="PlaceTypePage" method="post" enctype="multipart/form-data">
 
@@ -34,5 +86,5 @@
         </form>
 
         <a href='@Url.Action("ViewAllPlaceType", "Admin")' class="back__list">Back to List</a>
-    </div>
+    </div>*@
     

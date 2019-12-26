@@ -4,7 +4,57 @@
 }
 
 <h1>ViewAllPlaceType</h1>
-<br/>
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col col-xs-6">
+                                    <h3 class="panel-title">@Localizer["Places"]</h3>
+                                </div>
+                                <div class="col col-xs-6 text-right">
+                                    <button type="button" class="btn btn-sm btn-primary btn-create"
+                                            onclick="location.href='@Url.Action("AddPlaceTypePage","Admin")'">
+                                        @Localizer["Create New"]
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-bordered table-list">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20%"><em class="fa fa-cog"></em></th>
+                                        <th>@SharedLocalizer["HousingType"]</th>
+                                        <th>@SharedLocalizer["EcoType"]</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var placeType in Model)
+                                    {
+                                        <tr>
+                                            <td align="center">
+                                                <a href='@Url.Action("PlaceTypePage","Admin", new{id = placeType.Id})' class="btn btn-default"><em class="fa fa-pencil"></em></a>
+                                                <a href='@Url.Action("PlaceTypeRemove","Admin",new{id = placeType.Id})' class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                                            </td>
+                                            <td>@placeType.HousingType</td>
+                                            <td>@placeType.EcoType</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+@*<br/>
 <a href='@Url.Action("AddPlaceTypePage","Admin")' class="link__dish">Add Place Type</a>
 <br/>
 @foreach (var placeType in Model)
@@ -15,4 +65,4 @@
     </div>
 }
 
-<a href='@Url.Action("Index","Admin")' class="back__list">Back</a>
+<a href='@Url.Action("Index","Admin")' class="back__list">Back</a>*@
