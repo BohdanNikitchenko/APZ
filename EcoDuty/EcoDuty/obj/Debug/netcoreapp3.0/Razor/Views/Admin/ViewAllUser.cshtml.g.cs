@@ -48,7 +48,7 @@ using Microsoft.AspNetCore.Mvc.Localization;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c8944187f4edb3ae08d1a4255428334496d217fc", @"/Views/Admin/ViewAllUser.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"37113bf3b6086b461ca53532fbc2cec3440875cc", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"567306d9ff0a7622502f3b67b79895274b91dc3c", @"/Views/_ViewImports.cshtml")]
     public class Views_Admin_ViewAllUser : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<User>>
     {
         #pragma warning disable 1998
@@ -145,6 +145,8 @@ WriteAttributeValue("", 441, Url.Action("Index","Admin"), 441, 28, false);
             WriteLiteral(" class=\"back__list\">Back</a>\r\n");
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public IHtmlLocalizer<SharedResource> SharedLocalizer { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public IViewLocalizer Localizer { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

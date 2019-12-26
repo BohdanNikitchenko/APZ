@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Don't have an account yet?" xml:space="preserve">
-    <value>У вас еще нет аккаунта?</value>
+  <data name="Edit profile" xml:space="preserve">
+    <value>Редактирование данных</value>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>Вход</value>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
   </data>
 </root>

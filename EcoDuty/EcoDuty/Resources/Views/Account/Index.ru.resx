@@ -120,4 +120,7 @@
   <data name="Have an account? - entrance" xml:space="preserve">
     <value>Есть аккаунт? - вход</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
 </root>
