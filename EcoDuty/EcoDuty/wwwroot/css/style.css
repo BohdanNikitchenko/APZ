@@ -18,6 +18,10 @@ body {
     text-align: left;
     background-color: #f5f8fa;
 }
+#sticky-footer {
+    flex-shrink: none;
+    background-color: #424242;
+}
 
 .navbar-laravel {
     box-shadow: 0 2px 4px rgba(0,0,0,.04);

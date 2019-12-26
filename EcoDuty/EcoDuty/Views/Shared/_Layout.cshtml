@@ -51,7 +51,7 @@
                         @await Html.PartialAsync("_SelectLanguagePartial")
                     </div>
                 </div>
-               
+
             </nav>
         </div>
 
@@ -62,11 +62,20 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - EcoDuty - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    @*<footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2019 - EcoDuty - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+
+        </footer>*@
+    <footer id="sticky-footer" class="footer py-1 text-white-50 cyan darken-3">
+            <div class="container text-center">
+                <small>Copyright &copy;  EcoDuty - 2019</small>
+            </div>
     </footer>
+    <!-- Footer -->
+    
+    <!-- Footer -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
@@ -76,4 +85,5 @@
 
     @RenderSection("Scripts", required: false)
 </body>
+
 </html>
