@@ -129,14 +129,50 @@
   <data name="AddressRequired" xml:space="preserve">
     <value>Address not specificate</value>
   </data>
+  <data name="AutoNumber" xml:space="preserve">
+    <value>Technic number</value>
+  </data>
+  <data name="AutoNumberError" xml:space="preserve">
+    <value>Invalid technic number</value>
+  </data>
+  <data name="AutoNumberRequired" xml:space="preserve">
+    <value>Technic number not specificate</value>
+  </data>
   <data name="City" xml:space="preserve">
     <value>City</value>
+  </data>
+  <data name="CityError" xml:space="preserve">
+    <value>Invalid city name</value>
+  </data>
+  <data name="CityRequired" xml:space="preserve">
+    <value>City name not specified</value>
   </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm password</value>
   </data>
   <data name="ConfirmPasswordErro" xml:space="preserve">
     <value>Password do not match</value>
+  </data>
+  <data name="Create New" xml:space="preserve">
+    <value>Create New</value>
+  </data>
+  <data name="CurrentRate" xml:space="preserve">
+    <value>Current Rate</value>
+  </data>
+  <data name="Descriotion" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EcoStandart" xml:space="preserve">
+    <value>Environmental standard</value>
+  </data>
+  <data name="EcoType" xml:space="preserve">
+    <value>Type of heating</value>
+  </data>
+  <data name="EcoTypeError" xml:space="preserve">
+    <value>Type of heating name size from 3 to 30 characters</value>
+  </data>
+  <data name="EcoTypeRequired" xml:space="preserve">
+    <value>Type of heating not specificated</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email*</value>
@@ -146,6 +182,30 @@
   </data>
   <data name="EmailRequired" xml:space="preserve">
     <value>Email not specified</value>
+  </data>
+  <data name="EngineVolume" xml:space="preserve">
+    <value>Engine volume(см³)</value>
+  </data>
+  <data name="EngineVolumeError" xml:space="preserve">
+    <value>Engine displacement from 200 to 10000</value>
+  </data>
+  <data name="Estimated Penalty Points" xml:space="preserve">
+    <value>Estimated Penalty Points</value>
+  </data>
+  <data name="Fine" xml:space="preserve">
+    <value>Penalty</value>
+  </data>
+  <data name="Fuel" xml:space="preserve">
+    <value>Fuel</value>
+  </data>
+  <data name="HousingType" xml:space="preserve">
+    <value>Type of hous</value>
+  </data>
+  <data name="HousingTypeError" xml:space="preserve">
+    <value>Type of hous name size from 3 to 30 characters</value>
+  </data>
+  <data name="HousingTypeRequired" xml:space="preserve">
+    <value>Type of hous not specificated</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name*</value>
@@ -180,6 +240,33 @@
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="Sensor" xml:space="preserve">
+    <value>Sensor</value>
+  </data>
+  <data name="Sensors" xml:space="preserve">
+    <value>Sensors</value>
+  </data>
+  <data name="SensorType" xml:space="preserve">
+    <value>Type of sensor</value>
+  </data>
+  <data name="SensorTypeError" xml:space="preserve">
+    <value>Type of sensor name size from 1 to 30 characters</value>
+  </data>
+  <data name="SensorTypeRequired" xml:space="preserve">
+    <value>Type of sensor not specificated</value>
+  </data>
+  <data name="SerialError" xml:space="preserve">
+    <value>Serial Number Size 10 characters</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Serial number</value>
+  </data>
+  <data name="SerialRequired" xml:space="preserve">
+    <value>Serial number not specificate</value>
+  </data>
+  <data name="SizeFine" xml:space="preserve">
+    <value>Amount of penalty points</value>
+  </data>
   <data name="Surname" xml:space="preserve">
     <value>Surname*</value>
   </data>
@@ -197,5 +284,14 @@
   </data>
   <data name="TaxIdentRequiered" xml:space="preserve">
     <value>Tax identity not specified</value>
+  </data>
+  <data name="TechnicData" xml:space="preserve">
+    <value>Year of technic manufacturers</value>
+  </data>
+  <data name="Technics" xml:space="preserve">
+    <value>Technics</value>
+  </data>
+  <data name="TechnicType" xml:space="preserve">
+    <value>Type of technic</value>
   </data>
 </root>

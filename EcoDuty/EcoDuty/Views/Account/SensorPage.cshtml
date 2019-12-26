@@ -1,9 +1,137 @@
 ﻿@model Sensor
 @{
     ViewData["Title"] = "SensorPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>SensorPage</h1>
+<main class="my-form m-5">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="profile-head">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">@SharedLocalizer["Sensor"]</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">@SharedLocalizer["Fines"]</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@SharedLocalizer["SerialNumber"]</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Model.SerialNumber</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@Localizer["SizeFine"]</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Model.SensorType.SizeFine</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@SharedLocalizer["SensorType"]</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Model.SensorType.Type</p>
+                                    </div>
+                                </div>
+                                @switch (@Model.SensorType.ResType)
+                                {
+                                    case "Int":
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>@SharedLocalizer["EcoStandart"]</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>@Model.SensorType.NormalInt</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>@SharedLocalizer["CurrentRate"]</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>@Model.CurrentInt</p>
+                                            </div>
+                                        </div>
+                                        break;
+                                    case "Bool":
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>@SharedLocalizer["EcoStandart"]</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>@Model.SensorType.NormalBool</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>@SharedLocalizer["CurrentRate"]</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>@Model.CurrentBool</p>
+                                            </div>
+                                        </div>
+                                        break;
+                                    case "String":
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>@SharedLocalizer["EcoStandart"]</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>@Model.SensorType.NormalString</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>@SharedLocalizer["CurrentRate"]</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>@Model.CurrentString</p>
+                                            </div>
+                                        </div>
+                                        break;
+                                }
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                @foreach (var fine in Model.Fines)
+                                {
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>@fine.DateTime</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@fine.SizeFine</p>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="@Url.Action("ViewAllSensor","Account")">@SharedLocalizer["Back"]</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+@*<h1>SensorPage</h1>
 <p>Серийный номер:</p>
 <p>@Model.SerialNumber</p>
 <p>Тип сенсора:</p>
@@ -47,4 +175,4 @@
 }
 
 <br />
-<a href='@Url.Action("ViewAllSensor","Account")' class="back__list">Back to List</a>
+<a href='@Url.Action("ViewAllSensor","Account")' class="back__list">Back to List</a>*@

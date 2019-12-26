@@ -9,12 +9,14 @@ namespace BusinessLayer.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Не указано название города")]
-        [RegularExpression(@"^\s*[A-ZА-Я][a-zа-я]+('[a-zа-я]+|-[A-ZА-Я][a-zа-я]+)?\s*$", ErrorMessage = "Название города неверно")]
+        [Required(ErrorMessage = "CityRequired")]
+        [RegularExpression(@"^\s*[A-ZА-Я][a-zа-я]+('[a-zа-я]+|-[A-ZА-Я][a-zа-я]+)?\s*$", ErrorMessage = "CityError")]
+        [Display(Name = "City")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Не указано название страны")]
-        [RegularExpression(@"^\s*[A-ZА-Я][a-zа-я]+('[a-zа-я]+|-[A-ZА-Я][a-zа-я]+)?\s*$", ErrorMessage = "Название города страны")]
+        [Required(ErrorMessage = "CountryRequired")]
+        [RegularExpression(@"^\s*[A-ZА-Я][a-zа-я]+('[a-zа-я]+|-[A-ZА-Я][a-zа-я]+)?\s*$", ErrorMessage = "CountryError")]
+        [Display(Name = "Country")]
         public string Country { get; set; }
         public string Status { get; set; }
     }

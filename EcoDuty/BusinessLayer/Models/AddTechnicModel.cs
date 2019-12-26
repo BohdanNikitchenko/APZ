@@ -8,16 +8,20 @@ namespace BusinessLayer.Models
 {
     public class AddTechnicModel
     {
-        [Required(ErrorMessage = "Не указан номер транспорта")]
-        [RegularExpression(@"\w*", ErrorMessage = "Некорректный номер транспорта")]
+        [Required(ErrorMessage = "AutoNumberRequired")]
+        [RegularExpression(@"\w*", ErrorMessage = "AutoNumberError")]
+        [Display(Name = "AutoNumber")]
         public string AutoNumber { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
+        [Display(Name = "TechnicData")]
         public DateTime YearOfCarManufacture { get; set; }
 
-        [Range(200, 10000, ErrorMessage = "Обьем двигателя от 200 до 10000")]
+        [Range(200, 10000, ErrorMessage = "EngineVolumeError")]
+        [Display(Name = "EngineVolume")]
         public int EngineVolume { get; set; }
+        [Display(Name = "TechnicType")]
         public int TechnicTypeId { get; set; }
         public List<SelectListItem> TechnicTypeList { get; set; }
 

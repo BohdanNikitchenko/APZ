@@ -3,9 +3,69 @@
     ViewData["Title"] = "ViewAllSensor";
 }
 
-<h1>ViewAllSensor</h1>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+<h1>ViewAllPlace</h1>
 
-<br />
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col col-xs-6">
+                                    <h3 class="panel-title">@SharedLocalizer["Sensors"]</h3>
+                                </div>
+                                <div class="col col-xs-6 text-right">
+                                    <button type="button" class="btn btn-sm btn-primary btn-create"
+                                            onclick="location.href='@Url.Action("AddSensorPage","Account")'">
+                                        @SharedLocalizer["Create New"]
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-bordered table-list" id="dev-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20%"><em class="fa fa-cog"></em></th>
+                                        <th>@SharedLocalizer["SerialNumber"]</th>
+                                        <th>@SharedLocalizer["SensorType"]</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var sensor in Model)
+                                    {
+                                        if (sensor.SerialNumber != null)
+                                        {
+                                            <tr>
+                                                <td align="center">
+                                                    <a href='@Url.Action("SensorPage","Account", new{id = sensor.Id})' class="btn btn-default"><em class="fa fa-info"></em></a>
+                                                    <a href='@Url.Action("SensorRemove","Account",new{id = sensor.Id})' class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                                                </td>
+                                                <td>@sensor.SerialNumber</td>
+                                                <td>@sensor.SensorType.Type</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                            <div>
+                                <a href="@Url.Action("Account","Account")">@SharedLocalizer["Back"]</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+@*<br />
 <a href='@Url.Action("AddSensorPage","Account")' class="link__dish">Add Sensor</a>
 <br />
 @foreach (var sensor in Model)
@@ -19,4 +79,4 @@
     }
 }
 
-<a href='@Url.Action("Account","Account")' class="back__list">Back</a>
+<a href='@Url.Action("Account","Account")' class="back__list">Back</a>*@

@@ -1,11 +1,94 @@
 ﻿@model Technic
 @{
     ViewData["Title"] = "TechnicPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>TechnicPage</h1>
 
-<p>Номер транспорта:</p>
+
+<main class="my-form m-5">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col col-xs-6">
+                                    <h3 class="panel-title">@SharedLocalizer["Technics"]:</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" panel-body">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@SharedLocalizer["AutoNumber"]:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Model.AutoNumber</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@SharedLocalizer["TechnicData"]:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Model.YearOfCarManufacture</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@SharedLocalizer["EngineVolume"]:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Model.EngineVolume</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@SharedLocalizer["TechnicType"]:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Model.TechnicType.Type</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@SharedLocalizer["EcoStandart"]:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Model.TechnicType.Classification</p>
+                                    </div>
+                                </div>   
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@SharedLocalizer["Fuel"]:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Model.TechnicType.Fuel</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@SharedLocalizer["Estimated Penalty Points"]:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Model.SizeFine</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="@Url.Action("ViewAllTechnic","Account")">@SharedLocalizer["Back"]</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+@*<p>Номер транспорта:</p>
 <p>@Model.AutoNumber</p>
 <p>Год выпуска:</p>
 <p>@Model.YearOfCarManufacture</p>
@@ -20,4 +103,4 @@
 <p>Предусмотренный размер штрафных баллов:</p>
 <p>@Model.SizeFine</p>
 <br />
-<a href='@Url.Action("ViewAllTechnic","Account")' class="back__list">Back to List</a>
+<a href='@Url.Action("ViewAllTechnic","Account")' class="back__list">Back to List</a>*@

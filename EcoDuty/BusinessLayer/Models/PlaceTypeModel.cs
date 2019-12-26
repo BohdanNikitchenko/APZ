@@ -9,12 +9,15 @@ namespace BusinessLayer.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Не указано название типа помещения")]
-        [StringLength(30, MinimumLength = 3, ErrorMessage = "Размер названия типа помещения от 3 до 30 символов")]
+        [Required(ErrorMessage = "HousingTypeRequired")]
+        [StringLength(30, MinimumLength = 3, ErrorMessage = "HousingTypeError")]
+        [Display(Name = "HousingType")]
         public string HousingType { get; set; }
-        [Required(ErrorMessage = "Не указано название экологичесвого помещения")]
-        [StringLength(30, MinimumLength = 3, ErrorMessage = "Размер названия экологического типа помещения от 3 до 30 символов")]
+        [Required(ErrorMessage = "EcoTypeRequired")]
+        [StringLength(30, MinimumLength = 3, ErrorMessage = "EcoTypeError")]
+        [Display(Name = "EcoType")]
         public string EcoType { get; set; }
+        [Display(Name = "SizeFine")]
         public int SizeFine { get; set; }
     }
 }

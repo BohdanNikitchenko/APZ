@@ -5,7 +5,58 @@
 
 <h1>AddTechnicPage</h1>
 
-<form asp-action="AddTechnicPage" method="post" enctype="multipart/form-data">
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">@SharedLocalizer["Add place"]</div>
+                    <div class="card-body">
+                        <form asp-action="AddTechnicPage" method="post" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group row">
+                                <label asp-for="AutoNumber" class="col-md-4 col-form-label text-md-right"></label>
+                                <div class="col-md-6">
+                                    <input asp-for="AutoNumber" class="form-control" />
+                                    <span asp-validation-for="AutoNumber" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="YearOfCarManufacture" class="col-md-4 col-form-label text-md-right"></label>
+                                <div class="col-md-6">
+                                    <input asp-for="YearOfCarManufacture" class="form-control" />
+                                    <span asp-validation-for="YearOfCarManufacture" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="EngineVolume" class="col-md-4 col-form-label text-md-right"></label>
+                                <div class="col-md-6">
+                                    <input asp-for="EngineVolume" class="form-control" />
+                                    <span asp-validation-for="EngineVolume" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="TechnicTypeId" class="col-md-4 col-form-label text-md-right"></label>
+                                <div class="col-md-6">
+                                    <select asp-for="TechnicTypeId" class="form-control input__item" asp-items="@Model.TechnicTypeList"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    @SharedLocalizer["Save"]
+                                </button>
+                            </div>
+                        </form>
+                        <div>
+                            <a href="@Url.Action("ViewAllTechnic","Account")">@SharedLocalizer["Back"]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+@*<form asp-action="AddTechnicPage" method="post" enctype="multipart/form-data">
 
 
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -41,4 +92,4 @@
 
 </form>
 
-<a href='@Url.Action("ViewAllTechnic","Account")' class="back__list">Back to List</a>
+<a href='@Url.Action("ViewAllTechnic","Account")' class="back__list">Back to List</a>*@
