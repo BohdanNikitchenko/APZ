@@ -201,3 +201,10 @@ D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Ac
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.Account.ru.resources
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.ChangeUserData.ru.resources
 D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.PlacePage.ru.resources
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Home.Index.uk.resources
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.Account.uk.resources
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.Index.uk.resources
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.Login.uk.resources
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Account.PlacePage.uk.resources
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Admin.UserPage.ru.resources
+D:\Github\APZ\EcoDuty\EcoDuty\obj\Debug\netcoreapp3.0\EcoDuty.Resources.Views.Admin.UserPage.uk.resources

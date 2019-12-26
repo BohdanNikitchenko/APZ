@@ -74,7 +74,8 @@ namespace EcoDuty
                 var supportedCultures = new[]
                 {
                     new CultureInfo("en"), 
-                    new CultureInfo("ru")
+                    new CultureInfo("ru"),
+                    new CultureInfo("uk"),
                 };
 
                 options.DefaultRequestCulture = new RequestCulture("en");

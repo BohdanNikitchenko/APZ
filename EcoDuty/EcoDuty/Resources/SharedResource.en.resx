@@ -174,6 +174,9 @@
   <data name="EcoTypeRequired" xml:space="preserve">
     <value>Type of heating not specificated</value>
   </data>
+  <data name="Edit profile" xml:space="preserve">
+    <value>Edit profile</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>Email*</value>
   </data>

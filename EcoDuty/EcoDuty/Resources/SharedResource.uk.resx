@@ -117,13 +117,202 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add place" xml:space="preserve">
+    <value>Додати місце</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Адреса</value>
+  </data>
+  <data name="AddressError" xml:space="preserve">
+    <value>Розмір адреси від 3 до 40 символів</value>
+  </data>
+  <data name="AddressRequired" xml:space="preserve">
+    <value>Адреса не вказана</value>
+  </data>
+  <data name="AutoNumber" xml:space="preserve">
+    <value>Технічний номер</value>
+  </data>
+  <data name="AutoNumberError" xml:space="preserve">
+    <value>Недійсний технічний номер</value>
+  </data>
+  <data name="AutoNumberRequired" xml:space="preserve">
+    <value>Технічний номер не вказаний</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Місто</value>
+  </data>
+  <data name="CityError" xml:space="preserve">
+    <value>Недійсна назва міста</value>
+  </data>
+  <data name="CityRequired" xml:space="preserve">
+    <value>Назва міста не вказана</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Підтвердьте пароль</value>
+  </data>
+  <data name="ConfirmPasswordErro" xml:space="preserve">
+    <value>Пароль не збігається</value>
+  </data>
+  <data name="Create New" xml:space="preserve">
+    <value>Створити новий</value>
+  </data>
+  <data name="CurrentRate" xml:space="preserve">
+    <value>Поточний показник</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Опис</value>
+  </data>
+  <data name="EcoStandart" xml:space="preserve">
+    <value>Екологічний стандарт</value>
+  </data>
+  <data name="EcoType" xml:space="preserve">
+    <value>Тип опалення</value>
+  </data>
+  <data name="EcoTypeError" xml:space="preserve">
+    <value>Тип назви нагріву розміром від 3 до 30 символів</value>
+  </data>
+  <data name="EcoTypeRequired" xml:space="preserve">
+    <value>Тип опалення не вказаний</value>
+  </data>
+  <data name="Edit profile" xml:space="preserve">
+    <value>Редагувати профіль</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email *</value>
+  </data>
+  <data name="EmailError" xml:space="preserve">
+    <value>Недійсна електронна адреса</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Електронний лист не вказаний</value>
+  </data>
+  <data name="EngineVolume" xml:space="preserve">
+    <value>Об'єм двигуна (см³)</value>
+  </data>
+  <data name="EngineVolumeError" xml:space="preserve">
+    <value>Об'єм двигуна від 200 до 10000</value>
+  </data>
+  <data name="Estimated Penalty Points" xml:space="preserve">
+    <value>Розрахункові штрафні бали</value>
+  </data>
+  <data name="Fine" xml:space="preserve">
+    <value>Штраф</value>
+  </data>
+  <data name="Fuel" xml:space="preserve">
+    <value>Паливо</value>
+  </data>
+  <data name="HousingType" xml:space="preserve">
+    <value>Тип кожухів</value>
+  </data>
+  <data name="HousingTypeError" xml:space="preserve">
+    <value>Тип назви розмірів від 3 до 30 символів</value>
+  </data>
+  <data name="HousingTypeRequired" xml:space="preserve">
+    <value>Тип кожухів не вказаний</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Ім'я *</value>
+  </data>
+  <data name="NameError" xml:space="preserve">
+    <value>Недійсне ім’я</value>
+  </data>
+  <data name="NameRequired" xml:space="preserve">
+    <value>Ім'я не вказано</value>
+  </data>
   <data name="Passport" xml:space="preserve">
-    <value>Паспорт*</value>
+    <value>Номер паспорта*</value>
+  </data>
+  <data name="PassportError" xml:space="preserve">
+    <value>Недійсний номер паспорта</value>
   </data>
   <data name="PassportRequired" xml:space="preserve">
-    <value>Не указан номер паспорта</value>
+    <value>Номер паспорта не вказаний</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль *</value>
+  </data>
+  <data name="PasswordError" xml:space="preserve">
+    <value>Пароль повинен містити від 6 до 30 символів</value>
   </data>
   <data name="PasswordRequired" xml:space="preserve">
-    <value>Не указан пароль</value>
+    <value>Пароль не вказаний</value>
+  </data>
+  <data name="PlaceNull" xml:space="preserve">
+    <value>Місце було видалено</value>
+  </data>
+  <data name="PlacesFine" xml:space="preserve">
+    <value>Усі штрафи</value>
+  </data>
+  <data name="PlaceType" xml:space="preserve">
+    <value>Тип місця</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+  <data name="Sensor" xml:space="preserve">
+    <value>Датчик</value>
+  </data>
+  <data name="SensorNull" xml:space="preserve">
+    <value>Датчик видалено</value>
+  </data>
+  <data name="Sensors" xml:space="preserve">
+    <value>Датчики</value>
+  </data>
+  <data name="SensorsFine" xml:space="preserve">
+    <value>Усі штрафи за датчики (IoT)</value>
+  </data>
+  <data name="SensorType" xml:space="preserve">
+    <value>Тип датчика</value>
+  </data>
+  <data name="SensorTypeError" xml:space="preserve">
+    <value>Тип імені датчика розміром від 1 до 30 символів</value>
+  </data>
+  <data name="SensorTypeRequired" xml:space="preserve">
+    <value>Тип датчика не вказаний</value>
+  </data>
+  <data name="SerialError" xml:space="preserve">
+    <value>Розмір серійного номера 10 символів</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Серійний номер</value>
+  </data>
+  <data name="SerialRequired" xml:space="preserve">
+    <value>Серійний номер не вказаний</value>
+  </data>
+  <data name="SizeFine" xml:space="preserve">
+    <value>Сума штрафних балів</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>Прізвище *</value>
+  </data>
+  <data name="SurnameError" xml:space="preserve">
+    <value>Неправильне прізвище</value>
+  </data>
+  <data name="SurnameRequired" xml:space="preserve">
+    <value>Прізвище не вказано</value>
+  </data>
+  <data name="TaxIdentError" xml:space="preserve">
+    <value>Недійсна податкова особа</value>
+  </data>
+  <data name="TaxIdentity" xml:space="preserve">
+    <value>Податковий номер *</value>
+  </data>
+  <data name="TaxIdentRequiered" xml:space="preserve">
+    <value>Податкова особа не вказана</value>
+  </data>
+  <data name="TechnicData" xml:space="preserve">
+    <value>Рік виробників техніки</value>
+  </data>
+  <data name="TechnicNull" xml:space="preserve">
+    <value>Техніку видалено</value>
+  </data>
+  <data name="Technics" xml:space="preserve">
+    <value>Техніка</value>
+  </data>
+  <data name="TechnicsFine" xml:space="preserve">
+    <value>Всі штрафи техніки</value>
+  </data>
+  <data name="TechnicType" xml:space="preserve">
+    <value>Тип техніки</value>
   </data>
 </root>
