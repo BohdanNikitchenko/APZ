@@ -7,4 +7,3 @@ D:\Github\APZ\EcoDuty\DataLayer\bin\Debug\netcoreapp3.0\DataLayer.runtimeconfig.
 D:\Github\APZ\EcoDuty\DataLayer\bin\Debug\netcoreapp3.0\DataLayer.pdb
 D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.0\DataLayer.dll
 D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.0\DataLayer.pdb
-D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.0\DataLayer.csprojAssemblyReference.cache

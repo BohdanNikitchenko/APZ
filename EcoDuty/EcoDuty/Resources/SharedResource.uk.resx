@@ -198,6 +198,9 @@
   <data name="Fine" xml:space="preserve">
     <value>Штраф</value>
   </data>
+  <data name="Fines" xml:space="preserve">
+    <value>Штрафи</value>
+  </data>
   <data name="Fuel" xml:space="preserve">
     <value>Паливо</value>
   </data>

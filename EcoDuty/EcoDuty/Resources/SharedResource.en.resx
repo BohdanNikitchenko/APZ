@@ -198,6 +198,9 @@
   <data name="Fine" xml:space="preserve">
     <value>Penalty</value>
   </data>
+  <data name="Fines" xml:space="preserve">
+    <value>Penalties</value>
+  </data>
   <data name="Fuel" xml:space="preserve">
     <value>Fuel</value>
   </data>

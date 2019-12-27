@@ -1,0 +1,9 @@
+D:\Github\APZ\EcoDuty\WindowsFormsIoTemul\bin\Debug\WindowsFormsIoTemul.exe.config
+D:\Github\APZ\EcoDuty\WindowsFormsIoTemul\bin\Debug\WindowsFormsIoTemul.exe
+D:\Github\APZ\EcoDuty\WindowsFormsIoTemul\bin\Debug\WindowsFormsIoTemul.pdb
+D:\Github\APZ\EcoDuty\WindowsFormsIoTemul\obj\Debug\WindowsFormsIoTemul.csprojAssemblyReference.cache
+D:\Github\APZ\EcoDuty\WindowsFormsIoTemul\obj\Debug\WindowsFormsIoTemul.Form1.resources
+D:\Github\APZ\EcoDuty\WindowsFormsIoTemul\obj\Debug\WindowsFormsIoTemul.Properties.Resources.resources
+D:\Github\APZ\EcoDuty\WindowsFormsIoTemul\obj\Debug\WindowsFormsIoTemul.csproj.GenerateResource.cache
+D:\Github\APZ\EcoDuty\WindowsFormsIoTemul\obj\Debug\WindowsFormsIoTemul.exe
+D:\Github\APZ\EcoDuty\WindowsFormsIoTemul\obj\Debug\WindowsFormsIoTemul.pdb

@@ -17,6 +17,13 @@ namespace DAL
         private IPlaceRepository placesRepository;
         private IPlaceTypeRepository placeTypesRepository;
 
+
+        public DataManager(ISensorsRepository sensorsRepository, IFinesRepository finesRepository)
+        {
+            this.finesRepository = finesRepository;
+            this.sensorsRepository = sensorsRepository;
+        }
+
         public DataManager(ICitiesRepository citiesRepository, IFinesRepository finesRepository,
             ISensorsRepository sensorsRepository,
             ISensorTypesRepository sensorTypesRepository, ITechnicsRepository technicsRepository,

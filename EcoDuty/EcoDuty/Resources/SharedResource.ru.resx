@@ -198,6 +198,9 @@
   <data name="Fine" xml:space="preserve">
     <value>Штраф</value>
   </data>
+  <data name="Fines" xml:space="preserve">
+    <value>Штрафы</value>
+  </data>
   <data name="Fuel" xml:space="preserve">
     <value>Топливо</value>
   </data>
@@ -241,7 +244,7 @@
     <value>Место было удалено</value>
   </data>
   <data name="PlacesFine" xml:space="preserve">
-    <value>Все места Штрафы</value>
+    <value>Все штрафы недвижемости</value>
   </data>
   <data name="PlaceType" xml:space="preserve">
     <value>Тип места</value>
@@ -250,7 +253,7 @@
     <value>Сохранить</value>
   </data>
   <data name="Sensor" xml:space="preserve">
-    <value>датчик</value>
+    <value>Датчик</value>
   </data>
   <data name="SensorNull" xml:space="preserve">
     <value>Датчик был удален</value>

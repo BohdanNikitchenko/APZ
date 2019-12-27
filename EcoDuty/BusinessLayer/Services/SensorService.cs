@@ -16,6 +16,18 @@ namespace BusinessLayer.Services
             this.dataManager = dataManager;
         }
 
+        public void SensorInt(string serialNumber, int res)
+        {
+            Sensor sensor = dataManager.SensorsRepository.GetSensorBySerialNumber(serialNumber);
+            if (sensor != null)
+            {
+                FineService fineService = new FineService(dataManager);
+                sensor.CurrentInt = res;
+                fineService.SensorFineInt(sensor);
+            }
+            
+        }
+
         public void SensorPOST(SensorAPIModel model)
         {
             Sensor sensor = dataManager.SensorsRepository.GetSensorBySerialNumber(model.SerialNumber);
