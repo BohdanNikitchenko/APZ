@@ -9,3 +9,4 @@ D:\Github\APZ\EcoDuty\DAL\bin\Debug\netcoreapp3.0\DataLayer.pdb
 D:\Github\APZ\EcoDuty\DAL\obj\Debug\netcoreapp3.0\DAL.csproj.CopyComplete
 D:\Github\APZ\EcoDuty\DAL\obj\Debug\netcoreapp3.0\DAL.dll
 D:\Github\APZ\EcoDuty\DAL\obj\Debug\netcoreapp3.0\DAL.pdb
+D:\Github\APZ\EcoDuty\DAL\obj\Debug\netcoreapp3.0\DAL.csproj.CoreCompileInputs.cache

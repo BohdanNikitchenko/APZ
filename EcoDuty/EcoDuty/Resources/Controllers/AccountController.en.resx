@@ -124,6 +124,6 @@
     <value>Passwords do not match</value>
   </data>
   <data name="UserRegisterUnique" xml:space="preserve">
-    <value>user already exists</value>
+    <value>User already exists</value>
   </data>
 </root>

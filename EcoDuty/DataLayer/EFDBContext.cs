@@ -38,8 +38,10 @@ namespace DataLayer
         public EFDBContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<EFDBContext>();
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EcoDutyDb;Trusted_Connection=True;MultipleActiveResultSets=true", b => b.MigrationsAssembly("DataLayer"));
+            //optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EcoDutyDb;Trusted_Connection=True;MultipleActiveResultSets=true", b => b.MigrationsAssembly("DataLayer"));
+            optionsBuilder.UseSqlServer("Server=tcp:mysqlserver1403.database.windows.net,1433;Initial Catalog=myEcoDutyDatabase;Persist Security Info=False;User ID=azureuser;Password=Df[heitdf;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;", b => b.MigrationsAssembly("DataLayer"));
 
+            
             return new EFDBContext(optionsBuilder.Options);
         }
     }
