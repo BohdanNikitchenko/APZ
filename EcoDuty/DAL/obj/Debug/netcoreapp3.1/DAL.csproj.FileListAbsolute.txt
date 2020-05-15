@@ -1,0 +1,12 @@
+D:\Github\APZ\EcoDuty\DAL\bin\Debug\netcoreapp3.1\DAL.deps.json
+D:\Github\APZ\EcoDuty\DAL\bin\Debug\netcoreapp3.1\DAL.dll
+D:\Github\APZ\EcoDuty\DAL\bin\Debug\netcoreapp3.1\DAL.pdb
+D:\Github\APZ\EcoDuty\DAL\bin\Debug\netcoreapp3.1\DataLayer.dll
+D:\Github\APZ\EcoDuty\DAL\bin\Debug\netcoreapp3.1\DataLayer.pdb
+D:\Github\APZ\EcoDuty\DAL\obj\Debug\netcoreapp3.1\DAL.csprojAssemblyReference.cache
+D:\Github\APZ\EcoDuty\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+D:\Github\APZ\EcoDuty\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+D:\Github\APZ\EcoDuty\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
+D:\Github\APZ\EcoDuty\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComplete
+D:\Github\APZ\EcoDuty\DAL\obj\Debug\netcoreapp3.1\DAL.dll
+D:\Github\APZ\EcoDuty\DAL\obj\Debug\netcoreapp3.1\DAL.pdb

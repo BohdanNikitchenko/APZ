@@ -12,6 +12,8 @@ namespace BusinessLayer.Services
     public class UserService
     {
         private DataManager dataManager;
+        public delegate void LoginHandler(string message);
+        public event LoginHandler Notify;              
 
         public UserService(DataManager dataManager)
         {
@@ -19,7 +21,7 @@ namespace BusinessLayer.Services
         }
         public User RegistrateUser(RegisterUserModel u)
         {
-            if (dataManager.UsersRepository.FindUserByPassport(u.Passport) != null)
+            if (dataManager.UsersRepository.Find(user => user.Passport == u.Passport) != null)
             {
                 return null;
             }
@@ -43,9 +45,16 @@ namespace BusinessLayer.Services
             return dataManager.CitiesRepository.GetList().Select(c => c.Name);
         }
 
+        public void Authorize(string userName)
+        {
+            string date = DateTime.Now.ToString();
+            Notify?.Invoke($"{userName} авторизировался {date}");   // 2.Вызов события
+        }
+
         public UserModel FindUserModelByPassport(string name)
         {
-            User user = dataManager.UsersRepository.FindUserByPassport(name);
+            //User user = dataManager.UsersRepository.FindUserByPassport(name);
+            User user = dataManager.UsersRepository.Find(u => u.Passport == name);
             user = EncryptingStaticService.Decrypt(user, user.Password);
             UserModel model = new UserModel(user);
 
@@ -61,8 +70,9 @@ namespace BusinessLayer.Services
 
         public User FindUserByPassport(string name)
         {
-            User user = dataManager.UsersRepository.FindUserByPassport(name);
-            if(user != null)
+            //User user = dataManager.UsersRepository.FindUserByPassport(name);
+            User user = dataManager.UsersRepository.Find(u => u.Passport == name);
+            if (user != null)
             {
                 return EncryptingStaticService.Decrypt(user, user.Password);
             }

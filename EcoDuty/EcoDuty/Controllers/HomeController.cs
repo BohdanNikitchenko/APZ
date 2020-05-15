@@ -17,13 +17,9 @@ namespace EcoDuty.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
-        private DataManager datamanager;
-        private ServiceManager servicesmanager;
+
+        private readonly DataManager datamanager;
+        private readonly ServiceManager servicesmanager;
 
         public HomeController(DataManager dataManager)
         {
@@ -35,7 +31,6 @@ namespace EcoDuty.Controllers
         {
             IEnumerable<CityRatingModel> places = servicesmanager.Rating.GetAllCities();
             return View(places);
-            //return RedirectToAction("Index", "Account");
         }
 
         public IActionResult Privacy()

@@ -6,6 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using BusinessLayer;
 using BusinessLayer.Models;
+using BusinessLayer.Services;
 using DAL;
 using DataLayer.Entities;
 using Microsoft.AspNetCore.Authentication;
@@ -26,8 +27,10 @@ namespace EcoDuty.Controllers
         {
             datamanager = dataManager;
             servicesmanager = new ServiceManager(dataManager);
+            servicesmanager.Users.Notify += NotifyService.Log;
             _localizer = localizer;
         }
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -71,6 +74,7 @@ namespace EcoDuty.Controllers
             ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
             // установка аутентификационных куки
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
+            servicesmanager.Users.Authorize(userName);
         }
 
         [HttpGet]
@@ -246,7 +250,7 @@ namespace EcoDuty.Controllers
         public IActionResult SensorPage(int id)
         {
             Sensor model = servicesmanager.Users.GetSensorById(id);
-            return View(model);
+            return View("SensorPage", model);
         }
 
 
@@ -309,3 +313,61 @@ namespace EcoDuty.Controllers
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

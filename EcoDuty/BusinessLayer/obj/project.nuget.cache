@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "n+SLTV29f3902aSvZTbPQOHvrHzkkzdEL+EBPHliinGsX1vzfF7VxIfv0YxVlR0TayMidBtUMgJ8peso3ucUwQ==",
+  "dgSpecHash": "mFk89sJcqSA+Vt9kx57utKpFSdhDbTcxEdVYZKH+1/MHTBL24ZfJQok0On2T7fDI0q15NTup4nCY1xCqbeRI3Q==",
   "success": true,
   "projectFilePath": "D:\\Github\\APZ\\EcoDuty\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
@@ -164,10 +164,7 @@
     "C:\\Users\\nikbo\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\nikbo\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\nikbo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
-    "C:\\Users\\nikbo\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
-    "C:\\Users\\nikbo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

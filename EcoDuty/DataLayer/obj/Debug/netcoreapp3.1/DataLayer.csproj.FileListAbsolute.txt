@@ -1,0 +1,12 @@
+D:\Github\APZ\EcoDuty\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.deps.json
+D:\Github\APZ\EcoDuty\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.runtimeconfig.json
+D:\Github\APZ\EcoDuty\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.runtimeconfig.dev.json
+D:\Github\APZ\EcoDuty\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+D:\Github\APZ\EcoDuty\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csprojAssemblyReference.cache
+D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.CoreCompileInputs.cache
+D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfoInputs.cache
+D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfo.cs
+D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
+D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb
+D:\Github\APZ\EcoDuty\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.genruntimeconfig.cache

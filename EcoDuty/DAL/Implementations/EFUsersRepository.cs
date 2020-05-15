@@ -58,16 +58,23 @@ namespace DAL.Implementations
             context.SaveChanges();
         }
 
-        public User FindUserByPassport(string passport)
+        //public User FindUserByPassport(string passport)
+        //{
+        //    return context.Set<User>()
+        //        .Include(x => x.City)
+        //        .Include(x => x.Sensors)
+        //        .Include(x => x.Technics)
+        //        .Include(x => x.Places)
+        //        .FirstOrDefault(x => x.Passport == passport);
+        //}
+        public User Find(Func<User, bool> predicate)
         {
-            return context.Set<User>()
-                .Include(x => x.City)
+            return context.Set<User>().Include(x => x.City)
                 .Include(x => x.Sensors)
                 .Include(x => x.Technics)
                 .Include(x => x.Places)
-                .FirstOrDefault(x => x.Passport == passport);
+                .FirstOrDefault(predicate);
         }
-
         //public User FindRegisteredUser(string passport, string password)
         //{
         //    throw new NotImplementedException();

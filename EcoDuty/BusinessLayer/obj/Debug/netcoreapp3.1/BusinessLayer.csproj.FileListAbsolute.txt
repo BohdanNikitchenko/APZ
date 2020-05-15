@@ -1,0 +1,14 @@
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Debug\netcoreapp3.1\BusinessLayer.deps.json
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Debug\netcoreapp3.1\BusinessLayer.dll
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Debug\netcoreapp3.1\BusinessLayer.pdb
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Debug\netcoreapp3.1\DAL.dll
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Debug\netcoreapp3.1\DAL.pdb
+D:\Github\APZ\EcoDuty\BusinessLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.csprojAssemblyReference.cache
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.csproj.CoreCompileInputs.cache
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.AssemblyInfoInputs.cache
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.AssemblyInfo.cs
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.csproj.CopyComplete
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.dll
+D:\Github\APZ\EcoDuty\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.pdb
