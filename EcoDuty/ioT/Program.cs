@@ -24,6 +24,7 @@ namespace ioT
             {
                 Console.WriteLine("Enter serial number:");
                 serialNumber = Console.ReadLine();
+                //if(serviceManager.Sensor.)
                 Console.WriteLine("Enter current value:");
                 res = Convert.ToInt32(Console.ReadLine());
                 serviceManager.Sensor.SensorInt(serialNumber, res);
